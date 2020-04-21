@@ -91,9 +91,9 @@ In this feature, you are giving the user the ability to reset the game and play 
   - When your functionality matches the above, Congratulations!!! you have completed the MVP for the Memory Match Game!!!
   - Move on to the `After The Final Feature` section below.
 
-### After The Final Feature
+### After Each Feature
 
-- When your Memory Match is complete, you will want to save and submit your work to the branch that you have created, and then open a pull request on the Learning Fuze Memory Match repository for review (***Instructions for submission are below!!!***).
+- When your feature implementation is complete, you will want to save and submit your work to the branch that you have created.
   - Use `git status` to check that you are on the correct branch that represents your feature.
   - You will want to **add**, **commit**, and **push** the code that you have written to the appropriate Github repository.
     1. `git add .`
@@ -102,21 +102,20 @@ In this feature, you are giving the user the ability to reset the game and play 
     3. `git push origin FEATURE_NAME_HERE`
        - e.g. `git push origin skeleton`
 
-- Finally, you will want to create a pull request. This will merge the code from your newly **completed** feature branch into your `master` branch.
+- Create a pull request from your `feature` branch to the `student-reviews` branch and post the pull request in the pull-requests Slack channel for your cohort. After posting your pull request, wait for an instructor to give you feedback before proceeding. Your instructor will tell you if you are approved or if there is a pull request review to address. ___DO NOT CONTINUE TO THE NEXT FEATURE UNTIL AN INSTRUCTOR HAS APPROVED YOUR PULL REQUEST___.
+
+- Once your code is approved by an instructor, you will want to create a pull request in _your own repo_. This will merge the code from your newly **completed** feature branch into your `master` branch.
 
   1. Navigate to <kbd>New Pull Request</kbd>:
   ![Navigate to pull requests](../post-feature/navigate-to-pull-request.gif)
-  2. Compare changes to merge:
+  1. Compare changes to merge:
   ![Compare changes to merge](../post-feature/compare-changes.gif)
-  3. Create a new pull request:
+  1. Create a new pull request:
   ![Create new pull request](../post-feature/create-pull-request.gif)
-  4. Merge the pull request:
+  1. Merge the pull request:
   ![merge pull request](../feature-gifs/merge-request.gif)
-  5. Update master with the new changes:
+  1. Update master with the new changes:
   - Note: you must `checkout` to the `master` branch and then `git pull origin master` to update your local `master` branch with the new code you just merged into the remote `master` branch.
   ![Update master](../post-feature/pull-new-changes.gif)
-  6. Create a pull request from your `feature` branch to the `student-reviews` branch and send the pull request to your lead instructor in Slack.
-    - You will be deleting this branch only `AFTER` your pull request has been approved!
 ![pull request from master](../post-feature/pull-request.gif)
-  7. Go back to [Features](../../README.md#features), if you're still working through the project.
-
+  1. Go back to [Features](../../README.md#features), if you're still working through the project.
