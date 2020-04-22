@@ -3,6 +3,8 @@ var firstCardClicked;
 var secondCardClicked;
 var firstCardClasses;
 var secondCardClasses;
+var maxMatches = 9;
+var matches = 0;
 
 gameCards.addEventListener('click', handleClick);
 
@@ -23,6 +25,10 @@ function handleClick(event) {
       gameCards.addEventListener('click', handleClick);
       firstCardClicked = null;
       secondCardClicked = null;
+      matches++;
+      if (matches === maxMatches) {
+        document.querySelector('.you-win').classList.remove('hidden');
+      }
     } else {
       console.log('no match');
       setTimeout(function() {
