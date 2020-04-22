@@ -164,3 +164,15 @@ h1 {
 .hidden {
   display: none;
 }
+
+.you-win {
+  position: fixed;
+  z-index: 1;
+  height: 50%;
+  width: 50%;
+  top: 25%;
+  left: 25%;
+  background-color: gold;
+  color: purple;
+  text-align: center;
+}
