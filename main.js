@@ -7,8 +7,12 @@ var maxMatches = 9;
 var matches = 0;
 var attempts = 0;
 var gamesPlayed = 0;
+var hiddenCards;
+var playAgain = document.getElementById('play-again');
+var youWin = document.querySelector('.you-win');
 
 gameCards.addEventListener('click', handleClick);
+playAgain.addEventListener('click', resetGame)
 
 function handleClick(event) {
   if(event.target.className.indexOf('card-back') === -1) {
@@ -31,7 +35,7 @@ function handleClick(event) {
       attempts++;
       displayStats();
       if (matches === maxMatches) {
-        document.querySelector('.you-win').classList.remove('hidden');
+        youWin.classList.remove('hidden');
       }
     } else {
       console.log('no match');
@@ -55,6 +59,25 @@ function displayStats() {
 }
 
 function calculateAccuracy(attempts, matches) {
-  var score = (matches / attempts) * 100;
-  return Math.trunc(score) + '%';
+  if (!attempts) {
+    return '0%';
+  }
+    var score = (matches / attempts) * 100;
+    return Math.trunc(score) + '%';
+}
+
+function resetGame() {
+  attempts = 0;
+  matches = 0;
+  gamesPlayed++;
+  displayStats();
+  resetCards();
+  youWin.classList.add('hidden');
+}
+
+function resetCards() {
+  hiddenCards = document.querySelectorAll('.card-back');
+  for (let i = 0; i < hiddenCards.length; i++) {
+    hiddenCards[i].classList.remove('hidden');
+  }
 }
