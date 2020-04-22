@@ -115,7 +115,7 @@ function createCards() {
   shuffleCards();
   for (let i = 0; i < 18; i++) {
     let newCard = document.createElement('div');
-    newCard.className = 'card col-2';
+    newCard.className = 'card col-2 col-custom';
     let newCardBack = document.createElement('div');
     newCardBack.className = 'card-back';
     let newCardFront = document.createElement('div');
