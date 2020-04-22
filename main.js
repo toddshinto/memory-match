@@ -10,9 +10,13 @@ var gamesPlayed = 0;
 var hiddenCards;
 var playAgain = document.getElementById('play-again');
 var youWin = document.querySelector('.you-win');
+var cards = gameCards.children;
+var cardsFrag = document.createDocumentFragment();
 
 gameCards.addEventListener('click', handleClick);
-playAgain.addEventListener('click', resetGame)
+playAgain.addEventListener('click', resetGame);
+
+shuffleCards();
 
 function handleClick(event) {
   if(event.target.className.indexOf('card-back') === -1) {
@@ -73,6 +77,7 @@ function resetGame() {
   displayStats();
   resetCards();
   youWin.classList.add('hidden');
+  shuffleCards();
 }
 
 function resetCards() {
@@ -80,4 +85,11 @@ function resetCards() {
   for (let i = 0; i < hiddenCards.length; i++) {
     hiddenCards[i].classList.remove('hidden');
   }
+}
+
+function shuffleCards() {
+  while (cards.length) {
+    cardsFrag.appendChild(cards[Math.floor(Math.random() * cards.length)]);
+  }
+  gameCards.appendChild(cardsFrag);
 }
