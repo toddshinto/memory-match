@@ -5,6 +5,8 @@ var firstCardClasses;
 var secondCardClasses;
 var maxMatches = 9;
 var matches = 0;
+var attempts = 0;
+var gamesPlayed = 0;
 
 gameCards.addEventListener('click', handleClick);
 
@@ -26,6 +28,8 @@ function handleClick(event) {
       firstCardClicked = null;
       secondCardClicked = null;
       matches++;
+      attempts++;
+      displayStats();
       if (matches === maxMatches) {
         document.querySelector('.you-win').classList.remove('hidden');
       }
@@ -37,7 +41,20 @@ function handleClick(event) {
         gameCards.addEventListener('click', handleClick);
         firstCardClicked = null;
         secondCardClicked = null;
-      }, 1500);
+        attempts++;
+        displayStats();
+      }, 1000);
     }
   }
+}
+
+function displayStats() {
+  document.getElementById('games').textContent = gamesPlayed;
+  document.getElementById('attempts').textContent = attempts;
+  document.getElementById('accuracy').textContent = calculateAccuracy(attempts, matches);
+}
+
+function calculateAccuracy(attempts, matches) {
+  var score = (matches / attempts) * 100;
+  return Math.trunc(score) + '%';
 }
