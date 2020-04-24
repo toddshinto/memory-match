@@ -13,6 +13,9 @@ var youWin = document.querySelector('.you-win');
 var spongebobButton = document.getElementById('spongebob');
 var thomasButton = document.getElementById('thomas');
 var dinoButton = document.getElementById('dino');
+var smallSpongebobButton = document.getElementById('toSpongebob');
+var smallDinoButton = document.getElementById('toDino');
+var smallThomasButton = document.getElementById('toThomas');
 var list = ['css-logo',
   'css-logo',
   'docker-logo',
@@ -38,18 +41,62 @@ playAgain.addEventListener('click', resetGame);
 spongebobButton.addEventListener('click', spongebobTheme);
 thomasButton.addEventListener('click', thomasTheme);
 dinoButton.addEventListener('click', dinoTheme);
+smallDinoButton.addEventListener('click', smallDinoTheme);
+smallSpongebobButton.addEventListener('click', smallSpongebobTheme);
+smallThomasButton.addEventListener('click', smallThomasTheme);
 
+function smallSpongebobTheme() {
+  document.querySelector('#title').className = 'spongebob-title';
+  let statsList = document.querySelectorAll('.stats');
+  for (let i = 0; i < statsList.length; i++) {
+    statsList[i].className = 'stats spongebob-stats';
+  }
+  document.querySelector('#misc-img').className = 'misc-img spongebob-img';
+  let cardList = document.querySelectorAll('.card-back');
+  for (let x = 0; x < cardList.length; x++) {
+    cardList[x].className = 'card-back spongebob-back';
+  }
+  document.querySelector('#bg').className = 'spongebob-bg';
+}
+
+function smallThomasTheme() {
+  document.querySelector('#title').className = 'thomas-title';
+  let statsList = document.querySelectorAll('.stats');
+  for (let i = 0; i < statsList.length; i++) {
+    statsList[i].className = 'stats thomas-stats';
+  }
+  document.querySelector('#misc-img').className = 'misc-img thomas-img';
+  let cardList = document.querySelectorAll('.card-back');
+  for (let x = 0; x < cardList.length; x++) {
+    cardList[x].className = 'card-back thomas-back';
+  }
+  document.querySelector('#bg').className = 'thomas-bg';
+}
+
+function smallDinoTheme() {
+  document.querySelector('#title').className = 'dino-title';
+  let statsList = document.querySelectorAll('.stats');
+  for (let i = 0; i < statsList.length; i++) {
+    statsList[i].className = 'stats dino-stats';
+  }
+  document.querySelector('#misc-img').className = 'misc-img dino-img';
+  let cardList = document.querySelectorAll('.card-back');
+  for (let x = 0; x < cardList.length; x++) {
+    cardList[x].className = 'card-back dino-back';
+  }
+  document.querySelector('#bg').className = 'dino-bg';
+}
 function spongebobTheme() {
   document.querySelector('.start-screen').className = 'hidden';
   document.querySelector('#title').className = 'spongebob-title';
   let statsList = document.querySelectorAll('.stats');
   for (let i = 0; i < statsList.length; i++) {
-    statsList[i].classList.add('spongebob-stats');
+    statsList[i].className = 'stats spongebob-stats';
   }
   document.querySelector('#misc-img').className = 'misc-img spongebob-img';
   let cardList = document.querySelectorAll('.card-back');
   for (let x = 0; x < cardList.length; x++) {
-    cardList[x].classList.add('spongebob-back');
+    cardList[x].className = 'card-back spongebob-back';
   }
   document.querySelector('#bg').className = 'spongebob-bg';
 }
@@ -59,12 +106,12 @@ function thomasTheme() {
   document.querySelector('#title').className = 'thomas-title';
   let statsList = document.querySelectorAll('.stats');
   for (let i = 0; i < statsList.length; i++) {
-    statsList[i].classList.add('thomas-stats');
+    statsList[i].className = 'stats thomas-stats';
   }
   document.querySelector('#misc-img').className = 'misc-img thomas-img';
   let cardList = document.querySelectorAll('.card-back');
   for (let x = 0; x < cardList.length; x++) {
-    cardList[x].classList.add('thomas-back');
+    cardList[x].className = 'card-back thomas-back';
   }
   document.querySelector('#bg').className = 'thomas-bg';
 }
@@ -74,12 +121,12 @@ function dinoTheme() {
   document.querySelector('#title').className = 'dino-title';
   let statsList = document.querySelectorAll('.stats');
   for (let i = 0; i < statsList.length; i++) {
-    statsList[i].classList.add('dino-stats');
+    statsList[i].className = 'stats dino-stats';
   }
   document.querySelector('#misc-img').className = 'misc-img dino-img';
   let cardList = document.querySelectorAll('.card-back');
   for (let x = 0; x < cardList.length; x++) {
-    cardList[x].classList.add('dino-back');
+    cardList[x].className = 'card-back dino-back';
   }
   document.querySelector('#bg').className = 'dino-bg';
 }
