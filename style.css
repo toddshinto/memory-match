@@ -27,10 +27,16 @@
     font-style: normal;
 }
 
+.show {
+  opacity: 1;
+  transition: opacity 10000ms;
+}
+
 .hiddenFade {
   opacity: 0;
   transition: opacity 1000ms;
 }
+
 .you-win {
   position: fixed;
   z-index: 1;
@@ -77,6 +83,9 @@
   background-color: rgba(101, 226, 240, .8);
 }
 
+.sponge-font {
+  font-size: 1.5em;
+}
 .spongebob-win {
 
 }
@@ -109,6 +118,10 @@
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   background-color: rgba(255, 255, 255, .9);
   border: 4px solid rgb(27, 164, 227);
+}
+
+.thomas-font {
+  font-size: 1.5em;
 }
 
 .thomas-back {
@@ -400,7 +413,7 @@ h1 {
 
 }
 
-.css-logo {
+/* .css-logo {
   background-image: url('assets/images/css-logo.png');
 }
 
@@ -434,6 +447,78 @@ h1 {
 
 .react-logo {
   background-image: url('assets/images/react-logo.png');
+} */
+
+.backpack {
+  background-image: url('assets/images/backpack.png');
+}
+
+.books {
+  background-image: url('assets/images/books.png');
+}
+
+.backpack_books {
+  background-image: url('assets/images/books.png');
+}
+
+.baseball {
+  background-image: url('assets/images/baseball.png');
+}
+
+.bat {
+  background-image: url('assets/images/bat.png');
+}
+
+.baseball_bat {
+  background-image: url('assets/images/baseball_bat.png');
+}
+
+.burger {
+  background-image: url('assets/images/burger.png');
+}
+
+.fries {
+  background-image: url('assets/images/fries.png');
+}
+
+.burger_fries {
+  background-image: url('assets/images/burger_fries.png');
+}
+
+.cup {
+  background-image: url('assets/images/cup.png');
+}
+
+.milk {
+  background-image: url('assets/images/milk.png');
+}
+
+.milk_cup {
+  background-image: url('assets/images/milk_cup.png');
+}
+
+.shoes {
+  background-image: url('assets/images/shoes.png');
+}
+
+.socks {
+  background-image: url('assets/images/socks.png');
+}
+
+.shoes_socks {
+  background-image: url('assets/images/shoes_socks.png');
+}
+
+.tv {
+  background-image: url('assets/images/tv.png');
+}
+
+.remote {
+  background-image: url('assets/images/remote.png');
+}
+
+.tv_remote {
+  background-image: url('assets/images/tv_remote.png');
 }
 
 .hidden {

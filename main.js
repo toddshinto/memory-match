@@ -11,6 +11,7 @@ var hiddenCards = null;
 var hiddenClass = null;
 var hiddenIndex = [];
 var storeHiddenClasses  = null;
+var statsText = document.querySelectorAll('.statsText');
 var container = document.querySelector('#container');
 var congrats = document.getElementById('congrats');
 var winScreen = document.querySelector("#win-screen");
@@ -72,6 +73,9 @@ function spongebobTheme() {
   for (let x = 0; x < cardList.length; x++) {
     cardList[x].className = 'card-back spongebob-back';
   }
+  for (let i = 0; i < statsText.length; i++) {
+    statsText[i].classList = 'statsText sponge-font';
+  }
   document.querySelector('#bg').className = 'spongebob-bg'; //changes background
   if (winScreen.classList.value.includes('hidden')) { //changes win screen styling without changing hidden status
     winScreen.className = 'you-win spongebob-win hidden';
@@ -96,6 +100,9 @@ function thomasTheme() {
   for (let x = 0; x < cardList.length; x++) {
     cardList[x].className = 'card-back thomas-back';
   }
+  for (let i = 0; i < statsText.length; i++) {
+    statsText[i].classList = 'statsText thomas-font';
+  }
   document.querySelector('#bg').className = 'thomas-bg';
   if (winScreen.classList.value.includes('hidden')) {
     winScreen.className = 'you-win thomas-win hidden';
@@ -119,6 +126,9 @@ function dinoTheme() {
   let cardList = document.querySelectorAll('.card-back');
   for (let x = 0; x < cardList.length; x++) {
     cardList[x].className = 'card-back dino-back';
+  }
+  for (let i = 0; i < statsText.length; i++) {
+    statsText[i].classList = 'statsText dino-font';
   }
   document.querySelector('#bg').className = 'dino-bg';
   if (winScreen.classList.value.includes('hidden')) {
@@ -156,9 +166,7 @@ function handleClick(event) {
       attempts++;
       displayStats();
       if (matches === maxMatches) {
-        youWin.classList.replace('hidden', 'show');
-        congrats.classList.add('show');
-        congrats.classList.remove('hiddenFade');
+        youWin.classList.remove('hidden');
         container.classList.add('hiddenFade');
         setTimeout(function () {
           document.querySelector('.play-again-container').classList.remove('hidden');
@@ -188,7 +196,6 @@ function getHiddenIndex() {
 
 function restoreHidden() {
   for (let i = 0; i < hiddenIndex.length; i++) {
-    let x = hiddenIndex[i];
     gameCards.children[hiddenIndex[i]].lastElementChild.classList.value += 'hidden';
   }
 }
@@ -214,7 +221,8 @@ function resetGame() {
   displayStats();
   resetCards();
   youWin.classList.add('hidden');
-  shuffleCards();
+  createCards();
+  container.classList.remove('hiddenFade');
 }
 
 function resetCards() {
@@ -232,6 +240,9 @@ function shuffleCards() {
 }
 
 function createCards() {
+  while (gameCards.lastElementChild) {
+    gameCards.removeChild(gameCards.lastElementChild);
+  }
   shuffleCards();
   for (let i = 0; i < 18; i++) {
     let newCard = document.createElement('div');
