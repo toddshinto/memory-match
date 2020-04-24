@@ -106,6 +106,7 @@
 .dino-title {
   font-family: prehistoric_cavemanregular;
   color: rgb(239, 137, 12);
+  font-size: 5rem;
   text-shadow: -4px 0 rgb(19, 130, 32), 0 4px rgb(19, 130, 32), 4px 0 rgb(19, 130, 32), 0 -4px rgb(19, 130, 32);
 }
 
@@ -136,6 +137,43 @@
 }
 
 /* General CSS */
+.theme-changer {
+  position: fixed;
+  z-index: 1;
+  height: 45px;
+  width: 135px;
+  top: 0;
+  left: 25px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+#toSpongebob, #toDino, #toThomas {
+  width: 33%;
+  height: auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#toSpongebob:hover, #toDino:hover, #toThomas:hover {
+  transform: translateY(5px);
+}
+
+#toSpongebob {
+  background-image: url('assets/images/spongebob-squareface.jpg');
+}
+
+#toDino {
+  background-image: url('assets/images/dino-back.png');
+  background-color: rgba(19, 130, 32, 0.6)
+}
+
+#toThomas {
+  background-image: url('assets/images/thomas.png');
+  background-color: rgba(129, 194, 250, 0.9)
+}
 .start-screen {
   position: fixed;
   height: 100%;
@@ -144,7 +182,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-color: black;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   left: 0;
   display: flex;
