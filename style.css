@@ -1,7 +1,207 @@
+@font-face {
+  font-family: 'spongeboy_me_bobregular';
+  src: url('fonts/spongeboy_me_bob-webfont.woff2') format('woff2'),
+        url('fonts/spongeboy_me_bob-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'flange_bqbold';
+  src: url('fonts/flange_bq_bold.woff2') format('woff2'),
+        url('fonts/flange_bq_bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+    font-family: 'prehistoric_cavemanregular';
+    src: url('fonts/prehistoriccaveman-prj7.woff2') format('woff2'),
+         url('fonts/prehistoriccaveman-prj7.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'pwchalkmedium';
+    src: url('fonts/pwchalk.woff2') format('woff2'),
+         url('fonts/pwchalk.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Spongebob theme */
+
+.spongebob-bg {
+  background: url('assets/images/spongebob-background.jpg');
+}
+
+.spongebob-title {
+  font-family: spongeboy_me_bobregular;
+  color: rgb(248, 237, 86);
+  text-shadow:
+     .05em  3px 0 #000,
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+}
+
+.spongebob-img {
+  background-image: url('assets/images/spongebob-and-patrick.png');
+}
+
+.spongebob-stats {
+  font-family: 'spongeboy_me_bobregular';
+  color: rgb(248, 237, 86);
+  text-shadow:
+     .05em  3px 0 #000,
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+  background-color: rgba(101, 226, 240, .8);
+}
+
+.spongebob-back {
+  background-image: url('assets/images/spongebob-squareface.jpg');
+  background-size: cover;
+  border: 2px solid black;
+}
+
+/* Thomas Theme */
+.thomas-bg {
+  background: url('assets/images/thomas-background.jpg');
+}
+
+.thomas-title {
+  font-family: flange_bqbold;
+  color: rgb(239, 12, 37);
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.thomas-img {
+  background-image: url('assets/images/thomas.png');
+  background-position: center;
+}
+
+.thomas-stats {
+  font-family: 'flange_bqbold';
+  color: rgb(239, 12, 37);
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  background-color: rgba(255, 255, 255, .9);
+  border: 4px solid rgb(27, 164, 227);
+}
+
+.thomas-back {
+  background-image: url('assets/images/thomas-back.png');
+  background-size: contain;
+  background-position: center;
+  background-color:rgb(11, 116, 181);
+  border: 2px solid black;
+}
+
+/* Dinosaur Theme */
+.dino-bg {
+  background: url('assets/images/dino-background.jpg');
+}
+
+.dino-title {
+  font-family: prehistoric_cavemanregular;
+  color: rgb(239, 137, 12);
+  text-shadow: -4px 0 rgb(19, 130, 32), 0 4px rgb(19, 130, 32), 4px 0 rgb(19, 130, 32), 0 -4px rgb(19, 130, 32);
+}
+
+.dino-img {
+  background-image: url('assets/images/dino.png');
+  background-position: center;
+}
+
+.dino-stats {
+  font-family: prehistoric_cavemanregular;
+  text-transform: uppercase;
+  color: rgb(239, 137, 12);
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  background-color: rgba(19, 130, 32, 0.6);
+  border: 4px solid rgb(239, 137, 12);
+}
+
+.dino-font {
+  font-size: 1em;
+}
+
+.dino-back {
+  background-image: url('assets/images/dino-back.png');
+  background-size: contain;
+  background-position: center;
+  background-color:#639A67;
+  border: 2px solid rgb(239, 137, 12);
+}
+
+/* General CSS */
+.start-screen {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-image: url('assets/images/chalkboard.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: black;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.welcome, .welcome-sub {
+  font-family: pwchalkmedium;
+  color: white;
+  font-weight: lighter;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+}
+.spongebob, .dino, .thomas {
+  height: 100%;
+  width: 30%;
+  max-width: 300px;
+  min-height: 300px;
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 2%;
+  margin-right: 2%;
+  border: none;
+  border-radius: 6px;
+}
+
+.spongebob:hover, .dino:hover, .thomas:hover {
+  transform: translate(3px, 3px);
+}
+
+.spongebob {
+  background-image: url('assets/images/spongebob-squareface.jpg');
+  background-color: yellow;
+}
+.dino {
+  background-image: url('assets/images/dino-back.png');
+  background-color: rgba(19, 130, 32, 0.6);
+}
+.thomas {
+  background-image: url('assets/images/thomas.png');
+  background-color: rgba(129, 194, 250, 0.9);
+}
+.theme-container {
+  width: 100%;
+  height: 33%;
+  display: flex;
+  justify-content: center;
+}
+
 body {
   height: 97vh;
-  background: url('assets/images/lfz-background.jpg');
 }
+
 .container {
   width: 100%;
   max-width: 1500px;
@@ -76,6 +276,10 @@ body {
   position: relative;
 }
 
+.card:hover {
+  transform: translate(2px, 2px);
+}
+
 main {
   display: flex;
   justify-content: space-evenly;
@@ -85,19 +289,27 @@ main {
 aside {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+}
+
+.misc-img {
+  height: 35%;
+  margin-top: 4%;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .stats {
-  background-color: skyblue;
   height: 12%;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 2%;
+  border-radius: 6px;
 }
 
 h2 {
-  font-weight: lighter;
+  font-weight: 100;
 }
 
 header {
@@ -115,14 +327,17 @@ h1 {
 .card-front, .card-back {
   height: 100%;
   width: 100%;
-  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
+  border-radius: 6px;
 }
-
+.card-front {
+  background-size: cover;
+  border: 2px solid black;
+}
 .card-back {
-  background-image: url('assets/images/lfz-card.jpg');
+
 }
 
 .css-logo {

@@ -4,10 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-
-  <title>Memory Match Game</title>
+  <title>Memory Match</title>
 </head>
-<body>
+<body id="bg">
+  <div class="start-screen">
+    <h1 class="welcome">WELCOME!</h1>
+    <h2 class="welcome-sub">Choose your theme:</h2>
+    <div class="theme-container">
+      <button type="button" class="spongebob" id="spongebob"></button>
+      <button type="button" class="dino" id="dino"></button>
+      <button type="button" class="thomas" id="thomas"></button>
+    </div>
+  </div>
   <div class="you-win hidden">
     <h3>you won!</h3>
     <button type="button" id="play-again">Play again?</button>
@@ -15,31 +23,34 @@
   <div class="container">
     <div class="row-1">
       <header>
-        <h1>LFZ Memory Match</h1>
+        <h1 class="spongebob-title thomas-title dino-title" id="title">MATCH THE CARDS!</h1>
       </header>
     </div>
     <div class="row-2">
       <aside class="col-2" id="stats">
-        <div class="stats">
-          <h2>Stats</h2>
+        <div class="stats" id="sub-stats">
+          <h2 class="dino-font">Stats</h2>
         </div>
-        <div class="stats">
-          <h2>Games Played</h2>
+        <div class="stats" id="sub-stats">
+          <h2 class="dino-font">Games Played</h2>
         </div>
         <div class="stats" id="games">
-          <h2>0</h2>
+          <h2 class="dino-font">0</h2>
         </div>
         <div class="stats">
-          <h2>Attempts</h2>
+          <h2 class="dino-font">Attempts</h2>
         </div>
         <div class="stats" id="attempts">
-          <h2>0</h2>
+          <h2 class="dino-font">0</h2>
         </div>
-        <div class="stats">
+        <!-- <div class="stats">
           <h2>Accuracy</h2>
         </div>
         <div class="stats" id="accuracy">
           <h2>0%</h2>
+        </div> -->
+        <div class="misc-img spongebob-img thomas-img dino-img" id="misc-img">
+
         </div>
       </aside>
       <main class="col-10" id="gameCards">
