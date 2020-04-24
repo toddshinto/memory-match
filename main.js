@@ -16,6 +16,7 @@ var dinoButton = document.getElementById('dino');
 var smallSpongebobButton = document.getElementById('toSpongebob');
 var smallDinoButton = document.getElementById('toDino');
 var smallThomasButton = document.getElementById('toThomas');
+var startScreen = document.querySelector('.start-screen');
 var list = ['css-logo',
   'css-logo',
   'docker-logo',
@@ -41,53 +42,14 @@ playAgain.addEventListener('click', resetGame);
 spongebobButton.addEventListener('click', spongebobTheme);
 thomasButton.addEventListener('click', thomasTheme);
 dinoButton.addEventListener('click', dinoTheme);
-smallDinoButton.addEventListener('click', smallDinoTheme);
-smallSpongebobButton.addEventListener('click', smallSpongebobTheme);
-smallThomasButton.addEventListener('click', smallThomasTheme);
+smallDinoButton.addEventListener('click', dinoTheme);
+smallSpongebobButton.addEventListener('click', spongebobTheme);
+smallThomasButton.addEventListener('click', thomasTheme);
 
-function smallSpongebobTheme() {
-  document.querySelector('#title').className = 'spongebob-title';
-  let statsList = document.querySelectorAll('.stats');
-  for (let i = 0; i < statsList.length; i++) {
-    statsList[i].className = 'stats spongebob-stats';
-  }
-  document.querySelector('#misc-img').className = 'misc-img spongebob-img';
-  let cardList = document.querySelectorAll('.card-back');
-  for (let x = 0; x < cardList.length; x++) {
-    cardList[x].className = 'card-back spongebob-back';
-  }
-  document.querySelector('#bg').className = 'spongebob-bg';
-}
-
-function smallThomasTheme() {
-  document.querySelector('#title').className = 'thomas-title';
-  let statsList = document.querySelectorAll('.stats');
-  for (let i = 0; i < statsList.length; i++) {
-    statsList[i].className = 'stats thomas-stats';
-  }
-  document.querySelector('#misc-img').className = 'misc-img thomas-img';
-  let cardList = document.querySelectorAll('.card-back');
-  for (let x = 0; x < cardList.length; x++) {
-    cardList[x].className = 'card-back thomas-back';
-  }
-  document.querySelector('#bg').className = 'thomas-bg';
-}
-
-function smallDinoTheme() {
-  document.querySelector('#title').className = 'dino-title';
-  let statsList = document.querySelectorAll('.stats');
-  for (let i = 0; i < statsList.length; i++) {
-    statsList[i].className = 'stats dino-stats';
-  }
-  document.querySelector('#misc-img').className = 'misc-img dino-img';
-  let cardList = document.querySelectorAll('.card-back');
-  for (let x = 0; x < cardList.length; x++) {
-    cardList[x].className = 'card-back dino-back';
-  }
-  document.querySelector('#bg').className = 'dino-bg';
-}
 function spongebobTheme() {
-  document.querySelector('.start-screen').className = 'hidden';
+  if (startScreen.className != 'hidden') {
+    startScreen.className = 'hidden';
+  }
   document.querySelector('#title').className = 'spongebob-title';
   let statsList = document.querySelectorAll('.stats');
   for (let i = 0; i < statsList.length; i++) {
@@ -102,7 +64,9 @@ function spongebobTheme() {
 }
 
 function thomasTheme() {
-  document.querySelector('.start-screen').className = 'hidden';
+  if (startScreen.className != 'hidden') {
+    startScreen.className = 'hidden';
+  }
   document.querySelector('#title').className = 'thomas-title';
   let statsList = document.querySelectorAll('.stats');
   for (let i = 0; i < statsList.length; i++) {
@@ -117,7 +81,9 @@ function thomasTheme() {
 }
 
 function dinoTheme() {
-  document.querySelector('.start-screen').className = 'hidden';
+  if (startScreen.className != 'hidden') {
+    startScreen.className = 'hidden';
+  }
   document.querySelector('#title').className = 'dino-title';
   let statsList = document.querySelectorAll('.stats');
   for (let i = 0; i < statsList.length; i++) {
@@ -173,16 +139,16 @@ function handleClick(event) {
 function displayStats() {
   document.getElementById('games').textContent = gamesPlayed;
   document.getElementById('attempts').textContent = attempts;
-  document.getElementById('accuracy').textContent = calculateAccuracy(attempts, matches);
+  /*document.getElementById('accuracy').textContent = calculateAccuracy(attempts, matches);*/
 }
 
-function calculateAccuracy(attempts, matches) {
+/*function calculateAccuracy(attempts, matches) {
   if (!attempts) {
     return '0%';
   }
   var score = (matches / attempts) * 100;
   return Math.trunc(score) + '%';
-}
+}*/
 
 function resetGame() {
   attempts = 0;

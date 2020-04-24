@@ -167,7 +167,7 @@
 
 #toDino {
   background-image: url('assets/images/dino-back.png');
-  background-color: rgba(19, 130, 32, 0.6)
+  background-color: rgba(19, 130, 32, .9)
 }
 
 #toThomas {
@@ -219,7 +219,7 @@
 
 .spongebob {
   background-image: url('assets/images/spongebob-squareface.jpg');
-  background-color: yellow;
+  background-color: rgb(255, 215, 52);
 }
 .dino {
   background-image: url('assets/images/dino-back.png');
