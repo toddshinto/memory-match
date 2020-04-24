@@ -27,6 +27,23 @@
     font-style: normal;
 }
 
+.hiddenFade {
+  opacity: 0;
+  transition: opacity 1000ms;
+}
+.you-win {
+  position: fixed;
+  z-index: 1;
+  height: 50%;
+  width: 100%;
+  top: 25%;
+  left: 0;
+  background-color: none;
+  border-radius: 50px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
 /* Spongebob theme */
 
 .spongebob-bg {
@@ -60,11 +77,15 @@
   background-color: rgba(101, 226, 240, .8);
 }
 
+.spongebob-win {
+
+}
+/*
 .spongebob-back {
   background-image: url('assets/images/spongebob-squareface.jpg');
   background-size: cover;
   border: 2px solid black;
-}
+} */
 
 /* Thomas Theme */
 .thomas-bg {
@@ -238,6 +259,7 @@
 
 body {
   height: 97vh;
+  min-width: 1024px;
 }
 
 .container {
@@ -416,18 +438,6 @@ h1 {
 
 .hidden {
   display: none;
-}
-
-.you-win {
-  position: fixed;
-  z-index: 1;
-  height: 50%;
-  width: 50%;
-  top: 25%;
-  left: 25%;
-  background-color: gold;
-  color: purple;
-  text-align: center;
 }
 
 @media only screen
