@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'spongeboy_me_bobregular';
+    src: url('/fonts/spongeboy_me_bob-webfont.woff2') format('woff2'),
+         url('/fonts/spongeboy_me_bob-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -10,8 +10,9 @@ var gamesPlayed = 0;
 var hiddenCards;
 var playAgain = document.getElementById('play-again');
 var youWin = document.querySelector('.you-win');
-var cards = gameCards.children;
-var cardsFrag = document.createDocumentFragment();
+var spongebobButton = document.getElementById('spongebob');
+var thomasButton = document.getElementById('thomas');
+var dinoButton = document.getElementById('dino');
 var list = ['css-logo',
   'css-logo',
   'docker-logo',
@@ -34,6 +35,55 @@ var list = ['css-logo',
 createCards();
 gameCards.addEventListener('click', handleClick);
 playAgain.addEventListener('click', resetGame);
+spongebobButton.addEventListener('click', spongebobTheme);
+thomasButton.addEventListener('click', thomasTheme);
+dinoButton.addEventListener('click', dinoTheme);
+
+function spongebobTheme() {
+  document.querySelector('.start-screen').className = 'hidden';
+  document.querySelector('#title').className = 'spongebob-title';
+  let statsList = document.querySelectorAll('.stats');
+  for (let i = 0; i < statsList.length; i++) {
+    statsList[i].classList.add('spongebob-stats');
+  }
+  document.querySelector('#misc-img').className = 'misc-img spongebob-img';
+  let cardList = document.querySelectorAll('.card-back');
+  for (let x = 0; x < cardList.length; x++) {
+    cardList[x].classList.add('spongebob-back');
+  }
+  document.querySelector('#bg').className = 'spongebob-bg';
+}
+
+function thomasTheme() {
+  document.querySelector('.start-screen').className = 'hidden';
+  document.querySelector('#title').className = 'thomas-title';
+  let statsList = document.querySelectorAll('.stats');
+  for (let i = 0; i < statsList.length; i++) {
+    statsList[i].classList.add('thomas-stats');
+  }
+  document.querySelector('#misc-img').className = 'misc-img thomas-img';
+  let cardList = document.querySelectorAll('.card-back');
+  for (let x = 0; x < cardList.length; x++) {
+    cardList[x].classList.add('thomas-back');
+  }
+  document.querySelector('#bg').className = 'thomas-bg';
+}
+
+function dinoTheme() {
+  document.querySelector('.start-screen').className = 'hidden';
+  document.querySelector('#title').className = 'dino-title';
+  let statsList = document.querySelectorAll('.stats');
+  for (let i = 0; i < statsList.length; i++) {
+    statsList[i].classList.add('dino-stats');
+  }
+  document.querySelector('#misc-img').className = 'misc-img dino-img';
+  let cardList = document.querySelectorAll('.card-back');
+  for (let x = 0; x < cardList.length; x++) {
+    cardList[x].classList.add('dino-back');
+  }
+  document.querySelector('#bg').className = 'dino-bg';
+}
+
 
 function handleClick(event) {
   if (event.target.className.indexOf('card-back') === -1) {
