@@ -3,14 +3,21 @@ var firstCardClicked;
 var secondCardClicked;
 var firstCardClasses;
 var secondCardClasses;
+var firstCardClassesArray;
+var secondCardClassesArray;
+var firstCardIndex;
+var secondCardIndex;
 var maxMatches = 9;
 var matches = 0;
 var attempts = 0;
 var gamesPlayed = 0;
 var hiddenCards = null;
-var hiddenClass = null;
-var hiddenIndex = [];
-var storeHiddenClasses  = null;
+var hiddenCard1;
+var hiddenCard2;
+var storeHiddenIndex = [];
+var storeHiddenClasses  = [];
+var clickBelow = document.querySelector('.click-below');
+var goAgain = document.querySelector('.go-again');
 var statsText = document.querySelectorAll('.statsText');
 var container = document.querySelector('#container');
 var congrats = document.getElementById('congrats');
@@ -26,30 +33,79 @@ var smallSpongebobButton = document.getElementById('toSpongebob');
 var smallDinoButton = document.getElementById('toDino');
 var smallThomasButton = document.getElementById('toThomas');
 var startScreen = document.querySelector('.start-screen');
-var list = ['css-logo',
-  'css-logo',
-  'docker-logo',
-  'docker-logo',
-  'gitHub-logo',
-  'gitHub-logo',
-  'html-logo',
-  'html-logo',
-  'js-logo',
-  'js-logo',
-  'mysql-logo',
-  'mysql-logo',
-  'node-logo',
-  'node-logo',
-  'php-logo',
-  'php-logo',
-  'react-logo',
-  'react-logo']
+var winGif = document.getElementById('win-gif');
+var playAgain = document.querySelector('.play-again-container');
+var list = ['backpack',
+            'books',
+            'baseball',
+            'bat',
+            'burger',
+            'fries',
+            'milk',
+            'cup',
+            'eyes',
+            'glasses',
+            'pants',
+            'shirt',
+            'paper',
+            'pencil',
+            'tv',
+            'remote',
+            'shoes',
+            'socks']
+var pairList1 = ['backpack',
+                  'baseball',
+                  'burger',
+                  'milk',
+                  'eyes',
+                  'pants',
+                  'paper',
+                  'tv',
+                  'shoes']
+var pairList2 = ['books',
+                 'bat',
+                 'fries',
+                 'cup',
+                 'glasses',
+                 'shirt',
+                 'pencil',
+                 'remote',
+                 'socks']
+var mergeList = ['backpack_books',
+                 'baseball_bat',
+                 'burger_fries',
+                 'milk_cup',
+                 'eyes_glasses',
+                 'pants_shirt',
+                 'paper_pencil',
+                 'tv_remote',
+                 'shoes_socks'
+                 ]
+
+// ['css-logo',
+//   'css-logo',
+//   'docker-logo',
+//   'docker-logo',
+//   'gitHub-logo',
+//   'gitHub-logo',
+//   'html-logo',
+//   'html-logo',
+//   'js-logo',
+//   'js-logo',
+//   'mysql-logo',
+//   'mysql-logo',
+//   'node-logo',
+//   'node-logo',
+//   'php-logo',
+//   'php-logo',
+//   'react-logo',
+//   'react-logo']
 
 createCards();
 gameCards.addEventListener('click', handleClick);
-spongeAgain.addEventListener('click', resetGame);
-thomasAgain.addEventListener('click', resetGame);
-dinoAgain.addEventListener('click', resetGame);
+spongeAgain.addEventListener('click', resetGameSponge);
+thomasAgain.addEventListener('click', resetGameThomas);
+dinoAgain.addEventListener('click', resetGameDino);
 spongebobButton.addEventListener('click', spongebobTheme);
 thomasButton.addEventListener('click', thomasTheme);
 dinoButton.addEventListener('click', dinoTheme);
@@ -57,11 +113,35 @@ smallDinoButton.addEventListener('click', dinoTheme);
 smallSpongebobButton.addEventListener('click', spongebobTheme);
 smallThomasButton.addEventListener('click', thomasTheme);
 
+function resetGameSponge() {
+  resetGame();
+  spongebobTheme();
+  for (let i = 0; i < 18; i++) {
+    gameCards.children[i].lastElementChild.classList.remove('hidden');
+  }
+}
+
+function resetGameThomas() {
+  resetGame();
+  thomasTheme();
+  for (let i = 0; i < 18; i++) {
+    gameCards.children[i].lastElementChild.classList.remove('hidden');
+  }
+}
+
+function resetGameDino() {
+  resetGame();
+  dinoTheme();
+  for (let i = 0; i < 18; i++) {
+    gameCards.children[i].lastElementChild.classList.remove('hidden');
+  }
+}
+
 function spongebobTheme() {
+  storeHidden();
   if (startScreen.className != 'hidden') { //checks if start screen is hidden
     startScreen.className = 'hidden'; //if start screen is not hidden, sets to hidden
   }
-  getHiddenIndex(); //stores matched cards to presere during theme change
   document.querySelector('#title').className = 'spongebob-title'; //changes title format
   congrats.className += ' spongebob-title'; //changes congrats format
   let statsList = document.querySelectorAll('.stats'); //changes stat boxes formatting through setting classname
@@ -82,11 +162,14 @@ function spongebobTheme() {
   } else {
     winScreen.className = 'you-win spongebob-win';
   }
+  winGif.className = 'win-gif spongebob-gif'
+  goAgain.className = 'go-again spongebob-again';
+  clickBelow.className = 'click-below sponge-font';
   restoreHidden(); //restores matched cards during theme change
 }
 
 function thomasTheme() {
-  getHiddenIndex();
+  storeHidden();
   if (startScreen.className != 'hidden') {
     startScreen.className = 'hidden';
   }
@@ -109,11 +192,13 @@ function thomasTheme() {
   } else {
     winScreen.className = 'you-win thomas-win';
   }
+
+  goAgain.className = 'go-again thomas-again';
   restoreHidden();
 }
 
 function dinoTheme() {
-  getHiddenIndex();
+  storeHidden();
   if (startScreen.className != 'hidden') {
     startScreen.className = 'hidden';
   }
@@ -136,6 +221,8 @@ function dinoTheme() {
   } else {
     winScreen.className = 'you-win dino-win';
   }
+
+  goAgain.className = 'go-again dino-again';
   restoreHidden();
 }
 
@@ -147,18 +234,25 @@ function handleClick(event) {
   event.target.className += ' hidden';
   if (!firstCardClicked) {
     firstCardClicked = event.target;
+    console.log(event.target);
     firstCardClasses = firstCardClicked.previousElementSibling.className;
   } else {
     secondCardClicked = event.target;
     secondCardClasses = secondCardClicked.previousElementSibling.className;
     gameCards.removeEventListener('click', handleClick);
-    if (firstCardClasses === secondCardClasses) {
-      hiddenClass = firstCardClicked.previousElementSibling.getAttribute('class').split(' ');
-      if (storeHiddenClasses == null) {
-        storeHiddenClasses = hiddenClass[0] + ' ';
-      }  else {
-        storeHiddenClasses += hiddenClass[0] + ' ';
-      }
+    firstCardClassesArray = firstCardClasses.split(' ');
+    secondCardClassesArray = secondCardClasses.split(' ');
+    if (pairList1.includes(firstCardClassesArray[0])) {
+      firstCardIndex = pairList1.indexOf(firstCardClassesArray[0]);
+      secondCardIndex = pairList2.indexOf(secondCardClassesArray[0])
+    } else {
+      firstCardIndex = pairList2.indexOf(firstCardClassesArray[0]);
+      secondCardIndex = pairList1.indexOf(secondCardClassesArray[0])
+    }
+    if (firstCardIndex === secondCardIndex) {
+      storeHiddenClasses.push(firstCardIndex);
+      firstCardClicked.previousElementSibling.classList.replace(firstCardClicked.previousElementSibling.classList[0], mergeList[firstCardIndex]);
+      secondCardClicked.previousElementSibling.classList.replace(secondCardClicked.previousElementSibling.classList[0], mergeList[secondCardIndex])
       gameCards.addEventListener('click', handleClick);
       firstCardClicked = null;
       secondCardClicked = null;
@@ -167,10 +261,11 @@ function handleClick(event) {
       displayStats();
       if (matches === maxMatches) {
         youWin.classList.remove('hidden');
+        winGif.classList.remove('hidden');
         container.classList.add('hiddenFade');
         setTimeout(function () {
-          document.querySelector('.play-again-container').classList.remove('hidden');
-        }, 1500);
+          playAgain.classList.remove('hidden');
+        }, 5000);
       }
     } else {
       setTimeout(function () {
@@ -186,18 +281,27 @@ function handleClick(event) {
   }
 }
 
-function getHiddenIndex() {
-  for (let i = 0; i < 18; i++) {
-    if (gameCards.children[i].lastElementChild.classList.value.includes('hidden')) {
-      hiddenIndex.push(i);
+function storeHidden() {
+  for (let i = 0; i < (storeHiddenClasses.length); i++) {
+    hiddenCard1 = pairList1[storeHiddenClasses[i]];
+    hiddenCard2 = pairList2[storeHiddenClasses[i]];
+    for (let x = 0; x < 18; x++) {
+      if (gameCards.children[x].firstElementChild.classList.contains(hiddenCard1)) {
+        storeHiddenIndex.push(x);
+      } else if (gameCards.children[x].firstElementChild.classList.contains(hiddenCard2)) {
+        storeHiddenIndex.push(x);
       }
+    }
   }
 }
 
 function restoreHidden() {
-  for (let i = 0; i < hiddenIndex.length; i++) {
-    gameCards.children[hiddenIndex[i]].lastElementChild.classList.value += 'hidden';
+  for (let i = 0; i < storeHiddenIndex.length; i++) {
+    gameCards.children[storeHiddenIndex[i]].lastElementChild.classList.add('hidden');
   }
+  storeHiddenIndex = [];
+  hiddenCard1 = '';
+  hiddenCard2 = '';
 }
 
 function displayStats() {
@@ -215,6 +319,7 @@ function displayStats() {
 }*/
 
 function resetGame() {
+  playAgain.classList.add('hidden');
   attempts = 0;
   matches = 0;
   gamesPlayed++;
