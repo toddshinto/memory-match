@@ -22,13 +22,16 @@ var statsText = document.querySelectorAll('.statsText');
 var container = document.querySelector('#container');
 var congrats = document.getElementById('congrats');
 var winScreen = document.querySelector("#win-screen");
+var pokemonAgain = document.getElementById('pokemon-again');
 var spongeAgain = document.getElementById('sponge-again');
 var dinoAgain = document.getElementById('dino-again');
 var thomasAgain = document.getElementById('thomas-again');
 var youWin = document.querySelector('.you-win');
+var pokemonButton = document.getElementById('pokemon');
 var spongebobButton = document.getElementById('spongebob');
 var thomasButton = document.getElementById('thomas');
 var dinoButton = document.getElementById('dino');
+var smallPokemonButton = document.getElementById('toPokemon');
 var smallSpongebobButton = document.getElementById('toSpongebob');
 var smallDinoButton = document.getElementById('toDino');
 var smallThomasButton = document.getElementById('toThomas');
@@ -106,12 +109,15 @@ gameCards.addEventListener('click', handleClick);
 spongeAgain.addEventListener('click', resetGameSponge);
 thomasAgain.addEventListener('click', resetGameThomas);
 dinoAgain.addEventListener('click', resetGameDino);
+pokemonAgain.addEventListener('click', resetGamePokemon);
 spongebobButton.addEventListener('click', spongebobTheme);
 thomasButton.addEventListener('click', thomasTheme);
 dinoButton.addEventListener('click', dinoTheme);
+pokemonButton.addEventListener('click', pokemonTheme);
 smallDinoButton.addEventListener('click', dinoTheme);
 smallSpongebobButton.addEventListener('click', spongebobTheme);
 smallThomasButton.addEventListener('click', thomasTheme);
+smallPokemonButton.addEventListener('click', pokemonTheme);
 
 function resetGameSponge() {
   resetGame();
@@ -137,13 +143,21 @@ function resetGameDino() {
   }
 }
 
+function resetGamePokemon() {
+  resetGame();
+  pokemonTheme();
+  for (let i = 0; i < 18; i++) {
+    gameCards.children[i].lastElementChild.classList.remove('hidden');
+  }
+}
+
 function spongebobTheme() {
   storeHidden();
   if (startScreen.className != 'hidden') { //checks if start screen is hidden
     startScreen.className = 'hidden'; //if start screen is not hidden, sets to hidden
   }
   document.querySelector('#title').className = 'spongebob-title'; //changes title format
-  congrats.className += ' spongebob-title'; //changes congrats format
+  congrats.className = 'spongebob-title'; //changes congrats format
   let statsList = document.querySelectorAll('.stats'); //changes stat boxes formatting through setting classname
   for (let i = 0; i < statsList.length; i++) {
     statsList[i].className = 'stats spongebob-stats';
@@ -174,6 +188,7 @@ function thomasTheme() {
     startScreen.className = 'hidden';
   }
   document.querySelector('#title').className = 'thomas-title';
+  congrats.className = 'thomas-title';
   let statsList = document.querySelectorAll('.stats');
   for (let i = 0; i < statsList.length; i++) {
     statsList[i].className = 'stats thomas-stats';
@@ -192,8 +207,9 @@ function thomasTheme() {
   } else {
     winScreen.className = 'you-win thomas-win';
   }
-
+  winGif.className = 'win-gif thomas-gif'
   goAgain.className = 'go-again thomas-again';
+  clickBelow.className = 'click-below thomas-font';
   restoreHidden();
 }
 
@@ -203,6 +219,7 @@ function dinoTheme() {
     startScreen.className = 'hidden';
   }
   document.querySelector('#title').className = 'dino-title';
+  congrats.className = 'dino-title';
   let statsList = document.querySelectorAll('.stats');
   for (let i = 0; i < statsList.length; i++) {
     statsList[i].className = 'stats dino-stats';
@@ -221,11 +238,42 @@ function dinoTheme() {
   } else {
     winScreen.className = 'you-win dino-win';
   }
-
+  winGif.className = 'win-gif dino-gif'
   goAgain.className = 'go-again dino-again';
+  clickBelow.className = 'click-below dino-font';
   restoreHidden();
 }
 
+function pokemonTheme() {
+  storeHidden();
+  if (startScreen.className != 'hidden') {
+    startScreen.className = 'hidden';
+  }
+  document.querySelector('#title').className = 'pokemon-title';
+  congrats.className = 'pokemon-title';
+  let statsList = document.querySelectorAll('.stats');
+  for (let i = 0; i < statsList.length; i++) {
+    statsList[i].className = 'stats pokemon-stats';
+  }
+  document.querySelector('#misc-img').className = 'misc-img pokemon-img';
+  let cardList = document.querySelectorAll('.card-back');
+  for (let x = 0; x < cardList.length; x++) {
+    cardList[x].className = 'card-back pokemon-back';
+  }
+  for (let i = 0; i < statsText.length; i++) {
+    statsText[i].classList = 'statsText pokemon-font';
+  }
+  document.querySelector('#bg').className = 'pokemon-bg';
+  if (winScreen.classList.value.includes('hidden')) {
+    winScreen.className = 'you-win pokemon-win hidden';
+  } else {
+    winScreen.className = 'you-win pokemon-win';
+  }
+  winGif.className = 'win-gif pokemon-gif'
+  goAgain.className = 'go-again pokemon-again';
+  clickBelow.className = 'click-below pokemon-font';
+  restoreHidden();
+}
 
 function handleClick(event) {
   if (event.target.className.indexOf('card-back') === -1) {
@@ -251,11 +299,13 @@ function handleClick(event) {
     }
     if (firstCardIndex === secondCardIndex) {
       storeHiddenClasses.push(firstCardIndex);
-      firstCardClicked.previousElementSibling.classList.replace(firstCardClicked.previousElementSibling.classList[0], mergeList[firstCardIndex]);
-      secondCardClicked.previousElementSibling.classList.replace(secondCardClicked.previousElementSibling.classList[0], mergeList[secondCardIndex])
+      setTimeout(function() {
+        firstCardClicked.previousElementSibling.classList.replace(firstCardClicked.previousElementSibling.classList[0], mergeList[firstCardIndex]);
+        secondCardClicked.previousElementSibling.classList.replace(secondCardClicked.previousElementSibling.classList[0], mergeList[secondCardIndex])
+        firstCardClicked = null;
+        secondCardClicked = null;
+      }, 1000);
       gameCards.addEventListener('click', handleClick);
-      firstCardClicked = null;
-      secondCardClicked = null;
       matches++;
       attempts++;
       displayStats();
