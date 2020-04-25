@@ -114,45 +114,84 @@ spongebobButton.addEventListener('click', spongebobTheme);
 thomasButton.addEventListener('click', thomasTheme);
 dinoButton.addEventListener('click', dinoTheme);
 pokemonButton.addEventListener('click', pokemonTheme);
-smallDinoButton.addEventListener('click', dinoTheme);
-smallSpongebobButton.addEventListener('click', spongebobTheme);
-smallThomasButton.addEventListener('click', thomasTheme);
-smallPokemonButton.addEventListener('click', pokemonTheme);
+smallDinoButton.addEventListener('click', smallDinoTheme);
+smallSpongebobButton.addEventListener('click', smallSpongebobTheme);
+smallThomasButton.addEventListener('click', smallThomasTheme);
+smallPokemonButton.addEventListener('click', smallPokemonTheme);
+
+function smallPokemonTheme() {
+  storeHidden();
+  pokemonTheme();
+  if (attempts !== 0) {
+    restoreHidden();
+  }
+}
+
+function smallSpongebobTheme() {
+  storeHidden();
+  spongebobTheme();
+  if (attempts !== 0){
+  restoreHidden();
+  }
+}
+function smallThomasTheme() {
+  storeHidden();
+  thomasTheme();
+  if (attempts !== 0) {
+    restoreHidden();
+  }
+}
+function smallDinoTheme() {
+  storeHidden();
+  dinoTheme();
+  if (attempts !== 0) {
+    restoreHidden();
+  }
+}
+
+function clearHidden() {
+  for (let i = 0; i < 18; i++) {
+    gameCards.children[i].lastElementChild.classList.remove('hidden');
+  }
+}
 
 function resetGameSponge() {
   resetGame();
   spongebobTheme();
-  for (let i = 0; i < 18; i++) {
-    gameCards.children[i].lastElementChild.classList.remove('hidden');
-  }
+  clearHidden();
+  storeHiddenIndex = [];
+  hiddenCard1 = '';
+  hiddenCard2 = '';
 }
 
 function resetGameThomas() {
   resetGame();
   thomasTheme();
-  for (let i = 0; i < 18; i++) {
-    gameCards.children[i].lastElementChild.classList.remove('hidden');
-  }
+  clearHidden();
+  storeHiddenIndex = [];
+  hiddenCard1 = '';
+  hiddenCard2 = '';
 }
 
 function resetGameDino() {
   resetGame();
   dinoTheme();
-  for (let i = 0; i < 18; i++) {
-    gameCards.children[i].lastElementChild.classList.remove('hidden');
-  }
+  clearHidden();
+  storeHiddenIndex = [];
+  hiddenCard1 = '';
+  hiddenCard2 = '';
 }
 
 function resetGamePokemon() {
   resetGame();
   pokemonTheme();
-  for (let i = 0; i < 18; i++) {
-    gameCards.children[i].lastElementChild.classList.remove('hidden');
-  }
+  clearHidden();
+  storeHiddenIndex = [];
+  hiddenCard1 = '';
+  hiddenCard2 = '';
 }
 
 function spongebobTheme() {
-  storeHidden();
   if (startScreen.className != 'hidden') { //checks if start screen is hidden
     startScreen.className = 'hidden'; //if start screen is not hidden, sets to hidden
   }
@@ -179,11 +218,9 @@ function spongebobTheme() {
   winGif.className = 'win-gif spongebob-gif'
   goAgain.className = 'go-again spongebob-again';
   clickBelow.className = 'click-below sponge-font';
-  restoreHidden(); //restores matched cards during theme change
 }
 
 function thomasTheme() {
-  storeHidden();
   if (startScreen.className != 'hidden') {
     startScreen.className = 'hidden';
   }
@@ -210,11 +247,9 @@ function thomasTheme() {
   winGif.className = 'win-gif thomas-gif'
   goAgain.className = 'go-again thomas-again';
   clickBelow.className = 'click-below thomas-font';
-  restoreHidden();
 }
 
 function dinoTheme() {
-  storeHidden();
   if (startScreen.className != 'hidden') {
     startScreen.className = 'hidden';
   }
@@ -241,11 +276,9 @@ function dinoTheme() {
   winGif.className = 'win-gif dino-gif'
   goAgain.className = 'go-again dino-again';
   clickBelow.className = 'click-below dino-font';
-  restoreHidden();
 }
 
 function pokemonTheme() {
-  storeHidden();
   if (startScreen.className != 'hidden') {
     startScreen.className = 'hidden';
   }
@@ -272,7 +305,6 @@ function pokemonTheme() {
   winGif.className = 'win-gif pokemon-gif'
   goAgain.className = 'go-again pokemon-again';
   clickBelow.className = 'click-below pokemon-font';
-  restoreHidden();
 }
 
 function handleClick(event) {
@@ -304,8 +336,8 @@ function handleClick(event) {
         secondCardClicked.previousElementSibling.classList.replace(secondCardClicked.previousElementSibling.classList[0], mergeList[secondCardIndex])
         firstCardClicked = null;
         secondCardClicked = null;
+        gameCards.addEventListener('click', handleClick);
       }, 1000);
-      gameCards.addEventListener('click', handleClick);
       matches++;
       attempts++;
       displayStats();
@@ -313,6 +345,7 @@ function handleClick(event) {
         youWin.classList.remove('hidden');
         winGif.classList.remove('hidden');
         container.classList.add('hiddenFade');
+        clearHidden();
         setTimeout(function () {
           playAgain.classList.remove('hidden');
         }, 5000);
@@ -375,6 +408,14 @@ function resetGame() {
   gamesPlayed++;
   displayStats();
   resetCards();
+  firstCardClicked = '';
+  secondCardClicked = '';
+  firstCardClasses = '';
+  secondCardClasses = '';
+  firstCardClassesArray = '';
+  secondCardClassesArray = '';
+  firstCardIndex = '';
+  secondCardIndex = '';
   youWin.classList.add('hidden');
   createCards();
   container.classList.remove('hiddenFade');

@@ -142,12 +142,12 @@
     -1px  1px 0 #000,
      1px  1px 0 #000;
 }
-/*
+
 .spongebob-back {
   background-image: url('assets/images/spongebob-squareface.jpg');
   background-size: cover;
   border: 2px solid black;
-} */
+}
 
 .spongebob {
   background-image: url('assets/images/spongebob-squareface.jpg');
