@@ -44,14 +44,14 @@
 
 /*CSS applied to all Themes*/
 
-#sponge-again, #thomas-again, #dino-again, #pokemon-again {
+.goAgain {
   width: 100px;
   height: 100px;
   min-height: 100px;
   margin: 0;
 }
 
-.spongebob, .dino, .thomas, .pokemon{
+.themeSelector {
   height: 100%;
   width: 25%;
   max-width: 300px;
@@ -65,7 +65,7 @@
   border-radius: 6px;
 }
 
-#toSpongebob, #toDino, #toThomas, #toPokemon {
+.toTheme {
   width: 25%;
   height: auto;
   background-size: contain;
@@ -73,11 +73,11 @@
   background-position: center;
 }
 
-body.hasHover .spongebob:hover, .dino:hover, .thomas:hover, .pokemon:hover {
+.themeSelector:hover {
   transform: translate(3px, 3px);
 }
 
-body.hasHover #toSpongebob:hover, #toDino:hover, #toThomas:hover, #toPokemon:hover {
+.toTheme:hover, .goAgain:hover {
   transform: translateY(5px);
 }
 
@@ -347,6 +347,10 @@ body.hasHover #toSpongebob:hover, #toDino:hover, #toThomas:hover, #toPokemon:hov
 
 /* General CSS */
 
+#bg {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .show {
   opacity: 1;
   transition: opacity 10000ms;

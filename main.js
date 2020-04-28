@@ -174,66 +174,17 @@ smallSpongebobButton.addEventListener('click', smallSpongebobTheme);
 smallThomasButton.addEventListener('click', smallThomasTheme);
 smallPokemonButton.addEventListener('click', smallPokemonTheme);
 
-function watchForHover() {
-  var hasHoverClass = false;
-  var bodyContainer = document.body;
-  var lastTouchTime = 0;
-
-  function enableHover() {
-    if (new Date() - lastTouchTime < 500) return;
-    if (hasHoverClass) return;
-
-    bodyContainer.className += ' hasHover';
-    hasHoverClass = true;
-  }
-
-  function disableHover() {
-    if (!hasHoverClass) return;
-
-    bodyContainer.className = bodyContainer.className.replace(' hasHover', '');
-    hasHoverClass = false;
-  }
-
-  function updateLastTouchTime() {
-    lastTouchTime = new Date();
-  }
-
-  document.addEventListener('touchstart', updateLastTouchTime, true);
-  document.addEventListener('touchstart', disableHover, true);
-  document.addEventListener('mousemove', enableHover, true);
-
-  enableHover();
-}
-
-watchForHover();
-
 function smallPokemonTheme() {
-  storeHidden();
   pokemonTheme();
-  if (attempts !== 0) {
-    restoreHidden();
-  }
 }
 function smallSpongebobTheme() {
-  storeHidden();
   spongebobTheme();
-  if (attempts !== 0){
-  restoreHidden();
-  }
 }
 function smallThomasTheme() {
-  storeHidden();
   thomasTheme();
-  if (attempts !== 0) {
-    restoreHidden();
-  }
 }
 function smallDinoTheme() {
-  storeHidden();
   dinoTheme();
-  if (attempts !== 0) {
-    restoreHidden();
-  }
 }
 
 function clearHidden() {
@@ -268,7 +219,7 @@ function thomasTheme() {
   changeTheme(theme);
 }
 function dinoTheme() {
-  theme = 'pokemon';
+  theme = 'dino';
   changeTheme(theme);
 }
 function pokemonTheme() {
@@ -302,7 +253,7 @@ function changeTheme(theme) {
   }
   winGif.className = 'win-gif ' + theme+'-gif'
   goAgain.className = 'go-again ' + theme+'-again';
-  clickBelow.className = 'click-below ' + theme+'font';
+  clickBelow.className = 'click-below ' + theme+'-font';
 }
 
 function handleClick(event) {
@@ -312,11 +263,8 @@ function handleClick(event) {
   event.target.className += ' hidden';
   if (!firstCardClicked) {
     firstCardClicked = event.target;
-    console.log(event.target);
-    firstCardClasses = firstCardClicked.previousElementSibling.className;
   } else {
     secondCardClicked = event.target;
-    secondCardClasses = secondCardClicked.previousElementSibling.className;
     gameCards.removeEventListener('click', handleClick);
     firstCardMergedItems = firstCardClicked.previousElementSibling.classList[1];
     secondCardMergedItems = secondCardClicked.previousElementSibling.classList[1];
@@ -372,8 +320,6 @@ function resetGame() {
   resetCards();
   firstCardClicked = '';
   secondCardClicked = '';
-  firstCardClasses = '';
-  secondCardClasses = '';
   youWin.classList.add('hidden');
   createCards();
   container.classList.remove('hiddenFade');
