@@ -73,11 +73,11 @@
   background-position: center;
 }
 
-.spongebob:hover, .dino:hover, .thomas:hover, .pokemon:hover {
+body.hasHover .spongebob:hover, .dino:hover, .thomas:hover, .pokemon:hover {
   transform: translate(3px, 3px);
 }
 
-#toSpongebob:hover, #toDino:hover, #toThomas:hover, #toPokemon:hover {
+body.hasHover #toSpongebob:hover, #toDino:hover, #toThomas:hover, #toPokemon:hover {
   transform: translateY(5px);
 }
 
@@ -132,7 +132,7 @@
   background-color: rgba(101, 226, 240, .8);
 }
 
-.sponge-font {
+.spongebob-font {
   font-size: 1.5em;
   font-family: 'spongeboy_me_bobregular';
   color:rgb(248, 237, 86);
@@ -142,12 +142,12 @@
     -1px  1px 0 #000,
      1px  1px 0 #000;
 }
-
+/*
 .spongebob-back {
   background-image: url('assets/images/spongebob-squareface.jpg');
   background-size: cover;
   border: 2px solid black;
-}
+} */
 
 .spongebob {
   background-image: url('assets/images/spongebob-squareface.jpg');
@@ -583,148 +583,112 @@ h1 {
   background-color: rgba(255, 255, 255, .4);
 }
 
-/* .css-logo {
-  background-image: url('assets/images/css-logo.png');
-}
-
-.docker-logo {
-  background-image: url('assets/images/docker-logo.jpg');
-}
-
-.gitHub-logo {
-  background-image: url('assets/images/gitHub-logo.png');
-}
-
-.html-logo {
-  background-image: url('assets/images/html-logo.png');
-}
-
-.js-logo {
-  background-image: url('assets/images/js-logo.png');
-}
-
-.mysql-logo {
-  background-image: url('assets/images/mysql-logo.jpg');
-}
-
-.node-logo {
-  background-image: url('assets/images/node-logo.png');
-}
-
-.php-logo {
-  background-image: url('assets/images/php-logo.jpeg');
-}
-
-.react-logo {
-  background-image: url('assets/images/react-logo.png');
-} */
-
-.backpack {
+div .backpack {
   background-image: url('assets/images/backpack.png');
 }
 
-.books {
+div .books {
   background-image: url('assets/images/books.png');
+}
+
+div .bat {
+  background-image: url('assets/images/bat.png');
+}
+
+div .burger {
+  background-image: url('assets/images/burger.png');
+}
+
+div .glasses {
+  background-image: url('assets/images/glasses.png');
+}
+
+div .eyes {
+  background-image: url('assets/images/eyes.png');
+}
+
+div .fries {
+  background-image: url('assets/images/fries.png');
+}
+
+div .cup {
+  background-image: url('assets/images/cup.png');
+}
+
+div .milk {
+  background-image: url('assets/images/milk.png');
+}
+
+div .pants {
+  background-image: url('assets/images/pants.png');
+}
+
+div .shirt {
+  background-image: url('assets/images/shirt.png');
+}
+
+div .shoes {
+  background-image: url('assets/images/shoes.png');
+}
+
+div .socks {
+  background-image: url('assets/images/socks.png');
+}
+
+div .tv {
+  background-image: url('assets/images/tv.png');
+}
+
+div .remote {
+  background-image: url('assets/images/remote.png');
+}
+
+div .paper {
+  background-image: url('assets/images/paper.png')
+}
+
+div .pencil {
+  background-image: url('assets/images/pencil.png')
 }
 
 .backpack_books {
   background-image: url('assets/images/backpack_books.png');
 }
 
-.baseball {
-  background-image: url('assets/images/baseball.png');
-}
-
-.bat {
-  background-image: url('assets/images/bat.png');
-}
-
 .baseball_bat {
   background-image: url('assets/images/baseball_bat.png');
-}
-
-.burger {
-  background-image: url('assets/images/burger.png');
-}
-
-.glasses {
-  background-image: url('assets/images/glasses.png');
-}
-
-.eyes {
-  background-image: url('assets/images/eyes.png');
 }
 
 .eyes_glasses {
   background-image: url('assets/images/eyes_glasses.png');
 }
 
-.fries {
-  background-image: url('assets/images/fries.png');
-}
-
 .burger_fries {
   background-image: url('assets/images/burger_fries.png');
-}
-
-.cup {
-  background-image: url('assets/images/cup.png');
-}
-
-.milk {
-  background-image: url('assets/images/milk.png');
 }
 
 .milk_cup {
   background-image: url('assets/images/milk_cup.png');
 }
 
-.pants {
-  background-image: url('assets/images/pants.png');
-}
-
-.shirt {
-  background-image: url('assets/images/shirt.png');
-}
-
 .pants_shirt {
   background-image: url('assets/images/pants_shirt.png');
-}
-
-.shoes {
-  background-image: url('assets/images/shoes.png');
-}
-
-.socks {
-  background-image: url('assets/images/socks.png');
 }
 
 .shoes_socks {
   background-image: url('assets/images/shoes_socks.png');
 }
 
-.tv {
-  background-image: url('assets/images/tv.png');
-}
-
-.remote {
-  background-image: url('assets/images/remote.png');
-}
-
 .tv_remote {
   background-image: url('assets/images/tv_remote.png');
 }
 
-.paper {
-  background-image: url('assets/images/paper.png')
-}
-
-.pencil {
-  background-image: url('assets/images/pencil.png')
-}
-
 .paper_pencil {
   background-image: url('assets/images/paper_pencil.png');
+}
+
+.baseball {
+  background-image: url('assets/images/baseball.png');
 }
 
 .hidden {
@@ -793,6 +757,7 @@ and (orientation : portrait) {
   }
   .row-2 {
     flex-direction: column;
+    height: 100%;
   }
   #stats {
     width: 100%;
@@ -806,6 +771,10 @@ and (orientation : portrait) {
   #gameCards {
     width: 100%;
     height: 100%;
+  }
+  .spongebob, .dino, .thomas, .pokemon {
+    min-height: 50%;
+    height: 50%;
   }
   .col-custom {
     width: 28%;
