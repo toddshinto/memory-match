@@ -49,6 +49,7 @@
   height: 100px;
   min-height: 100px;
   margin: 0;
+  background-size: contain;
 }
 
 .themeSelector {
@@ -344,9 +345,7 @@
 .pokemon-gif {
   background-image: url('assets/images/squirtle-strut.gif');
 }
-if (event.target.parentElement.lastElementChild.classList.contains("coinEmpty") {
-  event.target.previousElement.lastElementChild.
-})
+
 /* General CSS */
 
 #bg {

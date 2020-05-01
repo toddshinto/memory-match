@@ -1,4 +1,3 @@
-var gameCards = document.getElementById('gameCards');
 var firstCardClicked;
 var secondCardClicked;
 var firstCardMergedItems;
@@ -14,12 +13,14 @@ var storeHiddenIndex = [];
 var storeHiddenClasses  = [];
 var theme;
 var removeItemsArray = [];
+
+var gameCards = document.getElementById('gameCards');
 var clickBelow = document.querySelector('.click-below');
 var goAgain = document.querySelector('.go-again');
 var statsText = document.querySelectorAll('.statsText');
-var container = document.querySelector('#container');
+var container = document.getElementById('container');
 var congrats = document.getElementById('congrats');
-var winScreen = document.querySelector("#win-screen");
+var winScreen = document.getElementById('win-screen');
 var pokemonAgain = document.getElementById('pokemon-again');
 var spongeAgain = document.getElementById('sponge-again');
 var dinoAgain = document.getElementById('dino-again');
@@ -36,6 +37,7 @@ var smallThomasButton = document.getElementById('toThomas');
 var startScreen = document.querySelector('.start-screen');
 var winGif = document.getElementById('win-gif');
 var playAgain = document.querySelector('.play-again-container');
+
 const card1 = {
   firstItem: 'backpack',
   secondItem: 'books',
@@ -93,71 +95,6 @@ var allCards = [
   card9
 ];
 
-// var list = ['backpack',
-//             'books',
-//             'baseball',
-//             'bat',
-//             'burger',
-//             'fries',
-//             'milk',
-//             'cup',
-//             'eyes',
-//             'glasses',
-//             'pants',
-//             'shirt',
-//             'paper',
-//             'pencil',
-//             'tv',
-//             'remote',
-//             'shoes',
-//             'socks']
-// var pairList1 = ['backpack',
-//                   'baseball',
-//                   'burger',
-//                   'milk',
-//                   'eyes',
-//                   'pants',
-//                   'paper',
-//                   'tv',
-//                   'shoes']
-// var pairList2 = ['books',
-//                  'bat',
-//                  'fries',
-//                  'cup',
-//                  'glasses',
-//                  'shirt',
-//                  'pencil',
-//                  'remote',
-//                  'socks']
-// var mergeList = ['backpack_books',
-//                  'baseball_bat',
-//                  'burger_fries',
-//                  'milk_cup',
-//                  'eyes_glasses',
-//                  'pants_shirt',
-//                  'paper_pencil',
-//                  'tv_remote',
-//                  'shoes_socks'
-//                  ]
-// ['css-logo',
-//   'css-logo',
-//   'docker-logo',
-//   'docker-logo',
-//   'gitHub-logo',
-//   'gitHub-logo',
-//   'html-logo',
-//   'html-logo',
-//   'js-logo',
-//   'js-logo',
-//   'mysql-logo',
-//   'mysql-logo',
-//   'node-logo',
-//   'node-logo',
-//   'php-logo',
-//   'php-logo',
-//   'react-logo',
-//   'react-logo']
-
 createCards();
 addToRemoveItemsArray();
 gameCards.addEventListener('click', handleClick);
@@ -174,6 +111,8 @@ smallSpongebobButton.addEventListener('click', smallSpongebobTheme);
 smallThomasButton.addEventListener('click', smallThomasTheme);
 smallPokemonButton.addEventListener('click', smallPokemonTheme);
 
+//these are here to facilitate switching themes in the middle of the game
+//...when it's added
 function smallPokemonTheme() {
   pokemonTheme();
 }
@@ -227,6 +166,7 @@ function pokemonTheme() {
   changeTheme(theme);
 }
 
+//change theme change to different stylesheets?
 function changeTheme(theme) {
   if (startScreen.className != 'hidden') { //checks if start screen is hidden
     startScreen.className = 'hidden'; //if start screen is not hidden, sets to hidden
@@ -237,13 +177,13 @@ function changeTheme(theme) {
   for (let i = 0; i < statsList.length; i++) {
     statsList[i].className = 'stats '+ theme+'-stats';
   }
-  document.querySelector('#misc-img').className = 'misc-img' +theme+'-img'; //changes bottom left image
+  document.querySelector('#misc-img').className = 'misc-img ' +theme+'-img'; //changes bottom left image
   let cardList = document.querySelectorAll('.card-back'); //changes card backs
   for (let x = 0; x < cardList.length; x++) {
     cardList[x].className = 'card-back ' +theme+'-back';
   }
   for (let i = 0; i < statsText.length; i++) {
-    statsText[i].classList = 'statsText '+ theme+'-font';
+    statsText[i].classList = 'statsText '+ theme+'-font'; //changes stats fonts
   }
   document.querySelector('#bg').className = theme+'-bg'; //changes background
   if (winScreen.classList.value.includes('hidden')) { //changes win screen styling without changing hidden status
@@ -266,12 +206,12 @@ function handleClick(event) {
   } else {
     secondCardClicked = event.target;
     gameCards.removeEventListener('click', handleClick);
-    firstCardMergedItems = firstCardClicked.previousElementSibling.classList[1];
+    firstCardMergedItems = firstCardClicked.previousElementSibling.classList[1];  // 2nd index of classlist is merged_items property
     secondCardMergedItems = secondCardClicked.previousElementSibling.classList[1];
     if (firstCardMergedItems === secondCardMergedItems) {
       storeHiddenClasses.push(firstCardMergedItems);
       setTimeout(function() {
-        for (let i = 0; i < removeItemsArray.length; i++) {
+        for (let i = 0; i < removeItemsArray.length; i++) { //this loops through the removeItemsArray to remove first/secondItem properties from classlist
           firstCardClicked.previousElementSibling.classList.remove(removeItemsArray[i]);
           secondCardClicked.previousElementSibling.classList.remove(removeItemsArray[i]);
         }
@@ -282,8 +222,10 @@ function handleClick(event) {
         attempts++;
         displayStats();
         if (matches === maxMatches) {
-          youWin.classList.remove('hidden');
-          winGif.classList.remove('hidden');
+          setTimeout(function() {
+            youWin.classList.remove('hidden');
+            winGif.classList.remove('hidden');
+          }, 2000);
           container.classList.add('hiddenFade');
           clearHidden();
           setTimeout(function () {
@@ -332,24 +274,27 @@ function resetCards() {
   }
 }
 
+// This function is called on load, and adds the first item and second item properties of new card objects
+// to the removeItemsArray that is looped through when cards are matched. This removes the
+// single item class and displays merged cards
 function addToRemoveItemsArray() {
   for (let i = 0; i < allCards.length; i++) {
     removeItemsArray.push(allCards[i].firstItem, allCards[i].secondItem);
   }
 }
 
-function shuffleCards() {
-  for (let i = allCards.length - 1; i > 0; i--) {
+function shuffleCards(array) {
+  for (let i = array.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
-    [allCards[i], allCards[j]] = [allCards[j], allCards[i]];
+    [array[i], array[j]] = [array[j], array[i]];
   }
 }
-
 function createCards() {
+  var finalShuffleArray = [];
   while (gameCards.lastElementChild) {
     gameCards.removeChild(gameCards.lastElementChild);
   }
-  shuffleCards();
+  shuffleCards(allCards);
   for (let i = 0; i < 9; i++) {
     let newCard = document.createElement('div');
     newCard.className = 'card col-2 col-custom';
@@ -371,5 +316,16 @@ function createCards() {
     newCard.appendChild(newCardFront);
     newCard.appendChild(newCardBack);
     gameCards.appendChild(newCard);
+  }
+  console.log(gameCards.children);
+  for (let i = 0; i < 18; i ++) {
+    finalShuffleArray.push(gameCards.children[i]);
+  }
+  while (gameCards.lastElementChild) {
+    gameCards.removeChild(gameCards.lastElementChild);
+  }
+  shuffleCards(finalShuffleArray);
+  for (let i = 0; i < 18; i++) {
+    gameCards.appendChild(finalShuffleArray[i]);
   }
 }
