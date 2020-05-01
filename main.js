@@ -115,15 +115,19 @@ smallPokemonButton.addEventListener('click', smallPokemonTheme);
 //...when it's added
 function smallPokemonTheme() {
   pokemonTheme();
+  matches = 0;
 }
 function smallSpongebobTheme() {
   spongebobTheme();
+  matches = 0;
 }
 function smallThomasTheme() {
   thomasTheme();
+  matches = 0;
 }
 function smallDinoTheme() {
   dinoTheme();
+  matches = 0;
 }
 
 function clearHidden() {
