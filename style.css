@@ -42,7 +42,22 @@
     font-style: normal;
 }
 
-/*CSS applied to all Themes*/
+.dino {
+  background-image: url('assets/images/dino-back.png');
+  background-color: rgba(19, 130, 32, .9);
+}
+.pokemon {
+  background-image: url('assets/images/pokeball.png');
+  background-color: none;
+}
+.spongebob {
+  background-image: url('assets/images/spongebob-squareface.jpg');
+  background-color: rgb(255, 215, 52);
+}
+.thomas {
+  background-image: url('assets/images/thomas.png');
+  background-color: rgba(129, 194, 250, 0.9);
+}
 
 .goAgain {
   width: 100px;
@@ -52,7 +67,7 @@
   background-size: contain;
 }
 
-.themeSelector {
+.theme-selector {
   height: 100%;
   width: 25%;
   max-width: 300px;
@@ -82,273 +97,7 @@
   transform: translateY(5px);
 }
 
-/* Spongebob theme */
-
-.spongebob-bg {
-  background: url('assets/images/spongebob-background.jpg');
-}
-
-.spongebob-title {
-  font-family: spongeboy_me_bobregular;
-  color: rgb(248, 237, 86);
-  text-shadow:
-     .05em  3px 0 #000,
-    -1px -1px 0 #000,
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000;
-}
-
-.spongebob-again {
-  font-family: spongeboy_me_bobregular;
-  color: rgb(248, 237, 86);
-  text-shadow: .05em  3px 0 #000,
-    -1px -1px 0 #000,
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000;
-  width: 100%;
-  text-align: left;
-  font-size: 4rem;
-  min-height: 0;
-}
-
-.spongebob-img {
-  background-image: url('assets/images/spongebob-and-patrick.png');
-}
-
-#toSpongebob {
-  background-image: url('assets/images/spongebob-squareface.jpg');
-}
-
-.spongebob-stats {
-  font-family: 'spongeboy_me_bobregular';
-  color: rgb(248, 237, 86);
-  text-shadow:
-     .05em  3px 0 #000,
-    -1px -1px 0 #000,
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000;
-  background-color: rgba(101, 226, 240, .8);
-}
-
-.spongebob-font {
-  font-size: 1.5em;
-  font-family: 'spongeboy_me_bobregular';
-  color:rgb(248, 237, 86);
-  text-shadow: .05em  3px 0 #000,
-    -1px -1px 0 #000,
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000;
-}
-
-.spongebob-back {
-  background-image: url('assets/images/spongebob-squareface.jpg');
-  background-size: cover;
-  border: 2px solid black;
-}
-
-.spongebob {
-  background-image: url('assets/images/spongebob-squareface.jpg');
-  background-color: rgb(255, 215, 52);
-}
-
-.spongebob-gif {
-  background-image: url('assets/images/spongebob-rainbow.gif');
-}
-
-/* Thomas Theme */
-.thomas-bg {
-  background: url('assets/images/thomas-background.jpg');
-}
-
-.thomas-title {
-  font-family: flange_bqbold;
-  color: rgb(239, 12, 37);
-  text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
-}
-
-.thomas-img {
-  background-image: url('assets/images/thomas.png');
-  background-position: center;
-}
-
-.thomas-stats {
-  font-family: 'flange_bqbold';
-  color: rgb(239, 12, 37);
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  background-color: rgba(255, 255, 255, .9);
-  border: 4px solid rgb(27, 164, 227);
-}
-
-.thomas-font {
-  font-size: 1.5em;
-  font-family: 'flange_bqbold';
-  color: rgb(239, 12, 37);
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-.thomas-again {
-  font-family: 'flange_bqbold';
-  color: rgb(239, 12, 37);
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  width: 100%;
-  text-align: left;
-  font-size: 4rem;
-  min-height: 0;
-}
-
-.thomas-back {
-  background-image: url('assets/images/thomas-back.png');
-  background-size: contain;
-  background-position: center;
-  background-color:rgb(11, 116, 181);
-  border: 2px solid black;
-}
-
-#toThomas {
-  background-image: url('assets/images/thomas.png');
-  background-color: rgba(129, 194, 250, 0.9)
-}
-
-.thomas {
-  background-image: url('assets/images/thomas.png');
-  background-color: rgba(129, 194, 250, 0.9);
-}
-
-.thomas-gif {
-  background-image: url('assets/images/thomas-choo-choo.gif');
-}
-
-/* Dinosaur Theme */
-.dino-bg {
-  background: url('assets/images/dino-background.jpg');
-}
-
-.dino-title {
-  font-family: prehistoric_cavemanregular;
-  color: rgb(239, 137, 12);
-  font-size: 5rem;
-  text-shadow: -4px 0 rgb(19, 130, 32), 0 4px rgb(19, 130, 32), 4px 0 rgb(19, 130, 32), 0 -4px rgb(19, 130, 32);
-}
-
-.dino-img {
-  background-image: url('assets/images/dino.png');
-  background-position: center;
-}
-
-.dino-stats {
-  font-family: prehistoric_cavemanregular;
-  text-transform: uppercase;
-  color: rgb(239, 137, 12);
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  background-color: rgba(19, 130, 32, 0.6);
-  border: 4px solid rgb(239, 137, 12);
-}
-
-.dino-font {
-  font-family: prehistoric_cavemanregular;
-  font-size: 1em;
-  color: rgb(239, 137, 12);
-  text-shadow: -4px 0 rgb(19, 130, 32), 0 4px rgb(19, 130, 32), 4px 0 rgb(19, 130, 32), 0 -4px rgb(19, 130, 32)
-}
-
-.dino-again {
-  font-family: prehistoric_cavemanregular;
-  color: rgb(239, 137, 12);
-  text-shadow: -4px 0 rgb(19, 130, 32), 0 4px rgb(19, 130, 32), 4px 0 rgb(19, 130, 32), 0 -4px rgb(19, 130, 32);
-  width: 100%;
-  text-align: left;
-  font-size: 3rem;
-  min-height: 0;
-}
-
-.dino-back {
-  background-image: url('assets/images/dino-back.png');
-  background-size: contain;
-  background-position: center;
-  background-color:#639A67;
-  border: 2px solid rgb(239, 137, 12);
-}
-
-#toDino {
-  background-image: url('assets/images/dino-back.png');
-  background-color: rgba(19, 130, 32, .9)
-}
-
-.dino {
-  background-image: url('assets/images/dino-back.png');
-  background-color: rgba(19, 130, 32, .9);
-}
-
-.dino-gif {
-  background-image: url('assets/images/rex-dance.gif');
-}
-
-/* Pokemon theme */
-
-.pokemon-bg {
-  background: url('assets/images/pokemon-background.png');
-}
-
-.pokemon-title {
-  font-family: pokemon_solidnormal;
-  color: rgb(255, 196, 48);
-  text-shadow: -4px 0 rgb(41, 82, 156), 0 4px rgb(41, 82, 156), 4px 0 rgb(41, 82, 156), 0 -4px rgb(41, 82, 156);
-}
-
-.pokemon-again {
-  font-family: pokemon_solidnormal;
-  color: rgb(255, 196, 48);
-  text-shadow: -4px 0 rgb(41, 82, 156), 0 4px rgb(41, 82, 156), 4px 0 rgb(41, 82, 156), 0 -4px rgb(41, 82, 156);
-  width: 100%;
-  text-align: left;
-  font-size: 4rem;
-  min-height: 0;
-}
-
-.pokemon-img {
-  background-image: url('assets/images/pikachu.png');
-}
-
-#toPokemon {
-  background-image: url('assets/images/pokeball.png');
-}
-
-.pokemon-stats {
-  font-family: 'pokemon_solidnormal';
-  color: rgb(255, 196, 48);
-  text-shadow: -3px 0 rgb(41, 82, 156), 0 3px rgb(41, 82, 156), 3px 0 rgb(41, 82, 156), 0 -3px rgb(41, 82, 156);
-  background-color: rgba(101, 226, 240, .8);
-}
-
-.pokemon-font {
-  font-size: 1.5em;
-  font-family: 'pokemon_solidnormal';
-  color:rgb(255, 196, 48);
-  text-shadow: -4px 0 rgb(41, 82, 156), 0 4px rgb(41, 82, 156), 4px 0 rgb(41, 82, 156), 0 -4px rgb(41, 82, 156);
-}
-
-.pokemon-back {
-  background-image: url('assets/images/pokemoncard.jpg');
-  background-size: cover;
-  background-color: white;
-  border: 2px solid black;
-}
-
-.pokemon {
-  background-image: url('assets/images/pokeball.png');
-  background-color: none;
-}
-
-.pokemon-gif {
-  background-image: url('assets/images/squirtle-strut.gif');
-}
-
-/* General CSS */
-
-#bg {
+.bg {
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -362,7 +111,7 @@
   transition: opacity 1000ms;
 }
 
-#win-gif {
+.win-gif {
   height: 500px;
   width: 500px;
   background-repeat: no-repeat;
@@ -541,7 +290,7 @@ aside {
   justify-content: flex-start;
 }
 
-.misc-img {
+.img {
   height: 35%;
   margin-top: 4%;
   background-size: contain;

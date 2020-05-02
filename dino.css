@@ -1,0 +1,55 @@
+/* Dinosaur Theme */
+
+.bg {
+  background: url('assets/images/dino-background.jpg');
+}
+
+.title {
+  font-family: prehistoric_cavemanregular;
+  color: rgb(239, 137, 12);
+  font-size: 5rem;
+  text-shadow: -4px 0 rgb(19, 130, 32), 0 4px rgb(19, 130, 32), 4px 0 rgb(19, 130, 32), 0 -4px rgb(19, 130, 32);
+}
+
+.goAgain {
+  font-family: prehistoric_cavemanregular;
+  color: rgb(239, 137, 12);
+  text-shadow: -4px 0 rgb(19, 130, 32), 0 4px rgb(19, 130, 32), 4px 0 rgb(19, 130, 32), 0 -4px rgb(19, 130, 32);
+  width: 100%;
+  text-align: left;
+  font-size: 3rem;
+  min-height: 0;
+}
+
+.img {
+  background-image: url('assets/images/dino.png');
+  background-position: center;
+}
+
+.stats {
+  font-family: prehistoric_cavemanregular;
+  text-transform: uppercase;
+  color: rgb(239, 137, 12);
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  background-color: rgba(19, 130, 32, 0.6);
+  border: 4px solid rgb(239, 137, 12);
+}
+
+.font {
+  font-family: prehistoric_cavemanregular;
+  font-size: 1em;
+  color: rgb(239, 137, 12);
+  text-shadow: -4px 0 rgb(19, 130, 32), 0 4px rgb(19, 130, 32), 4px 0 rgb(19, 130, 32), 0 -4px rgb(19, 130, 32)
+}
+
+.card-back {
+  background-image: url('assets/images/dino-back.png');
+  background-size: contain;
+  background-position: center;
+  background-color:#639A67;
+  border: 2px solid rgb(239, 137, 12);
+}
+
+.gif {
+  background-image: url('assets/images/rex-dance.gif');
+}

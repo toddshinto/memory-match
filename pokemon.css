@@ -1,0 +1,51 @@
+
+/* Pokemon theme */
+
+.bg {
+  background: url('assets/images/pokemon-background.png');
+}
+
+.title {
+  font-family: pokemon_solidnormal;
+  color: rgb(255, 196, 48);
+  text-shadow: -4px 0 rgb(41, 82, 156), 0 4px rgb(41, 82, 156), 4px 0 rgb(41, 82, 156), 0 -4px rgb(41, 82, 156);
+}
+
+.goAgain {
+  font-family: pokemon_solidnormal;
+  color: rgb(255, 196, 48);
+  text-shadow: -4px 0 rgb(41, 82, 156), 0 4px rgb(41, 82, 156), 4px 0 rgb(41, 82, 156), 0 -4px rgb(41, 82, 156);
+  width: 100%;
+  text-align: left;
+  font-size: 4rem;
+  min-height: 0;
+}
+
+.img {
+  background-image: url('assets/images/pikachu.png');
+}
+
+.stats {
+  font-family: 'pokemon_solidnormal';
+  color: rgb(255, 196, 48);
+  text-shadow: -3px 0 rgb(41, 82, 156), 0 3px rgb(41, 82, 156), 3px 0 rgb(41, 82, 156), 0 -3px rgb(41, 82, 156);
+  background-color: rgba(101, 226, 240, .8);
+}
+
+.font {
+  font-size: 1.5em;
+  font-family: 'pokemon_solidnormal';
+  color:rgb(255, 196, 48);
+  text-shadow: -4px 0 rgb(41, 82, 156), 0 4px rgb(41, 82, 156), 4px 0 rgb(41, 82, 156), 0 -4px rgb(41, 82, 156);
+}
+
+.card-back {
+  background-image: url('assets/images/pokemoncard.jpg');
+  background-size: cover;
+  background-color: white;
+  border: 2px solid black;
+}
+
+.gif {
+  background-image: url('assets/images/squirtle-strut.gif');
+}
