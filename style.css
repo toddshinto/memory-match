@@ -56,28 +56,28 @@
 }
 .dino {
   background-image: url('assets/images/dino-back.png');
-  background-color: rgba(19, 130, 32, .9);
+  background-color: rgba(19, 130, 32, 0);
   height: 2vw;
   width: 2vw;
   background-size: contain;
 }
 .pokemon {
   background-image: url('assets/images/pokeball.png');
-  background-color: none;
+  background-color: rgba(0, 0, 0, 0);
   height: 2vw;
   width: 2vw;
   background-size: contain;
 }
 .spongebob {
   background-image: url('assets/images/spongebob-squareface.jpg');
-  background-color: rgb(255, 215, 52);
+  background-color: rgba(255, 215, 52, 0);
   height: 2vw;
   width: 2vw;
   background-size: contain;
 }
 .thomas {
   background-image: url('assets/images/thomas.png');
-  background-color: rgba(129, 194, 250, 0.9);
+  background-color: rgba(129, 194, 250, 0);
   height: 2vw;
   width: 2vw;
   background-size: contain;
@@ -103,6 +103,28 @@
   background-size: contain;
 }
 
+.welcome, .welcome-sub {
+  font-family: pwchalkmedium;
+  color: white;
+  font-weight: lighter;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+}
+.welcome {
+  font-size: 6vw;
+}
+.welcome-sub {
+  font-size: 3vw;
+}
+.theme-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
 .goAgain {
   width: 100px;
   height: 100px;
@@ -224,28 +246,6 @@
   flex-direction: column;
 }
 
-.welcome, .welcome-sub {
-  font-family: pwchalkmedium;
-  color: white;
-  font-weight: lighter;
-  text-transform: uppercase;
-  width: 100%;
-  text-align: center;
-}
-.welcome {
-  font-size: 6vw;
-}
-.welcome-sub {
-  font-size: 3vw;
-}
-.theme-container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-content: flex-start;
-}
 
 body {
   height: 97vh;
