@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="spongebob.css" id="spongebob-style" class="dino-style">
+  <link rel="stylesheet" href="dino.css" id="dino-style" class="dino-style">
+  <link rel="stylesheet" href="thomas.css" id="thomas-style" class="thomas-style">
+  <link rel="stylesheet" href="pokemon.css" id="pokemon-style" class="pokemon-style">
   <title>Memory Match</title>
 </head>
-<body id="bg">
+
+<body id="bg" class="bg">
   <div class="theme-changer">
-    <button type="button" class="toTheme" id="toSpongebob"></button>
-    <button type="button" class="toTheme" id="toDino"></button>
-    <button type="button" class="toTheme" id="toThomas"></button>
-    <button type="button" class="toTheme" id="toPokemon"></button>
+    <button type="button" class="spongebob" id="toSpongebob"></button>
+    <button type="button" class="dino" id="toDino"></button>
+    <button type="button" class="thomas" id="toThomas"></button>
+    <button type="button" class="pokemon" id="toPokemon"></button>
   </div>
   <div class="start-screen">
     <h1 class="welcome">WELCOME!</h1>
     <h2 class="welcome-sub">Choose your theme:</h2>
     <div class="theme-container">
-      <button type="button" class="spongebob themeSelector" id="spongebob"></button>
-      <button type="button" class="dino themeSelector" id="dino"></button>
-      <button type="button" class="thomas themeSelector" id="thomas"></button>
-      <button type="button" class="pokemon themeSelector" id="pokemon"></button>
+      <button type="button" class="spongebob theme-selector" id="spongebob"></button>
+      <button type="button" class="dino theme-selector" id="dino"></button>
+      <button type="button" class="thomas theme-selector" id="thomas"></button>
+      <button type="button" class="pokemon theme-selector" id="pokemon"></button>
     </div>
   </div>
   <div class="you-win hidden congrats" id="win-screen">
-    <h1 id="congrats" class="congrats">CONGRATULATIONS!</h1>
-    <div class="hidden" id="win-gif"></div>
+    <h1 id="congrats" class="congrats title">CONGRATULATIONS!</h1>
+    <div class="hidden win-gif gif" id="win-gif"></div>
   </div>
   <div class="play-again-container hidden">
-    <h2 class = "go-again">PLAY AGAIN?</h2>
-    <p class= "click-below">CLICK BELOW</p>
+    <h2 class="go-again">PLAY AGAIN?</h2>
+    <p class="click-below">CLICK BELOW</p>
     <button type="button" class="spongebob goAgain" id="sponge-again"></button>
     <button type="button" class="dino goAgain" id="dino-again"></button>
     <button type="button" class="thomas goAgain" id="thomas-again"></button>
@@ -38,25 +44,25 @@
   <div class="container" id="container">
     <div class="row-1">
       <header>
-        <h1 id="title">MATCH THE CARDS!</h1>
+        <h1 id="title" class="title">MATCH THE CARDS!</h1>
       </header>
     </div>
     <div class="row-2">
       <aside class="col-2" id="stats">
         <div class="stats" id="statsLabel">
-          <h2 class="statsText">Stats</h2>
+          <h2 class="statsText font">Stats</h2>
         </div>
         <div class="stats" id="gamesPlayed">
-          <h2 class="statsText">Games Played</h2>
+          <h2 class="statsText font">Games Played</h2>
         </div>
         <div class="stats">
-          <h2 class="statsText" id="games">0</h2>
+          <h2 class="statsText font" id="games">0</h2>
         </div>
         <div class="stats">
-          <h2 class="statsText">Attempts</h2>
+          <h2 class="statsText font">Attempts</h2>
         </div>
         <div class="stats">
-          <h2 class="statsText" id="attempts">0</h2>
+          <h2 class="statsText font" id="attempts">0</h2>
         </div>
         <!-- <div class="stats">
           <h2>Accuracy</h2>
@@ -64,7 +70,7 @@
         <div class="stats" id="accuracy">
           <h2>0%</h2>
         </div> -->
-        <div class="misc-img spongebob-img thomas-img dino-img" id="misc-img">
+        <div class="img" id="img">
 
         </div>
       </aside>
@@ -74,4 +80,5 @@
   </div>
   <script src="main.js"></script>
 </body>
+
 </html>
