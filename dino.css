@@ -1,0 +1,52 @@
+/* Dinosaur Theme */
+
+.bg {
+  background-image: url('assets/images/dino-background.jpg');
+}
+
+.title {
+  font-family: lumberjackregular;
+  color: rgb(183, 168, 59);
+  font-size: 6vw;
+  text-shadow: .2vw .2vw .1vw black;
+}
+
+.goAgain {
+  font-family: lumberjackregular;
+  color: rgb(207, 43, 50);
+  text-shadow: .1vw .1vw .05vw rgb(237, 63, 53);
+  width: 100%;
+  text-align: left;
+  font-size: 3rem;
+  min-height: 0;
+}
+
+.img {
+  background-image: url('assets/images/dino.png');
+  background-position: center;
+}
+
+.stats {
+  font-family: lumberjackregular;
+  text-transform: uppercase;
+  background-color: rgba(19, 130, 32, 0.6);
+  box-shadow: 0.2vw 0.2vw 0.2vw black;
+}
+
+.font {
+  font-family: lumberjackregular;
+  font-size: 2.3vw;
+  color: rgb(183, 168, 59);
+  text-shadow: .1vw .1vw .05vw black;
+}
+
+.card-back {
+  background-image: url('assets/images/dino-back.png');
+  background-size: contain;
+  background-position: center;
+  background-color:#639A67;
+}
+
+.gif {
+  background-image: url('assets/images/rex-dance.gif');
+}
