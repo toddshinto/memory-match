@@ -1,28 +1,25 @@
 /* Spongebob theme */
 
 .bg {
-  background: url('assets/images/spongebob-background.jpg');
+  background-image: url('assets/images/spongebob-background.jpg');
 }
 
 .title {
   font-family: spongeboy_me_bobregular;
   color: rgb(248, 237, 86);
-  text-shadow:
-     .05em  3px 0 #000,
-    -1px -1px 0 #000,
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000;
+  text-shadow: 0.2vw 0.2vw 0.2vw #000;
+  font-size: 6vw;
 }
 
 .goAgain {
   font-family: spongeboy_me_bobregular;
   color: rgb(248, 237, 86);
-  text-shadow: .05em  3px 0 #000,
-    -1px -1px 0 #000,
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000;
+  text-shadow:
+  0.05em 0.03em 0 #000,
+  -.01em -.01em 0 #000,
+  .01em -.01em 0 #000,
+  -.01em .01em 0 #000,
+  .01em .01em 0 #000;
   width: 100%;
   text-align: left;
   font-size: 4rem;
@@ -36,32 +33,21 @@
 .stats {
   font-family: 'spongeboy_me_bobregular';
   color: rgb(248, 237, 86);
-  text-shadow:
-     .05em  3px 0 #000,
-    -1px -1px 0 #000,
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000;
   background-color: rgba(101, 226, 240, .8);
 }
 
 .font {
-  font-size: 1.5em;
+  font-size: 2vw;
   font-family: 'spongeboy_me_bobregular';
   color:rgb(248, 237, 86);
-  text-shadow: .05em  3px 0 #000,
-    -1px -1px 0 #000,
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000;
+  text-shadow: 0.1vw 0.1vw 0.1vw #000
 }
 
 .card-back {
   background-image: url('assets/images/spongebob-squareface.jpg');
   background-size: cover;
-  border: 2px solid black;
 }
 
-.-gif {
+.gif {
   background-image: url('assets/images/spongebob-rainbow.gif');
 }

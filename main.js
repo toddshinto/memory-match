@@ -9,18 +9,11 @@ var matches = 0;
 var attempts = 0;
 var gamesPlayed = 0;
 var hiddenCards = null;
-var storeHiddenIndex = [];
 var storeHiddenClasses  = [];
-var theme;
 var removeItemsArray = [];
 
 var gameCards = document.getElementById('gameCards');
-var clickBelow = document.querySelector('.click-below');
-var goAgain = document.querySelector('.go-again');
-var statsText = document.querySelectorAll('.statsText');
 var container = document.getElementById('container');
-var congrats = document.getElementById('congrats');
-var winScreen = document.getElementById('win-screen');
 var pokemonAgain = document.getElementById('pokemon-again');
 var spongeAgain = document.getElementById('sponge-again');
 var dinoAgain = document.getElementById('dino-again');
@@ -167,36 +160,11 @@ function thomasTheme() {
   pokemonStyle.disabled = true;
 }
 
-//change theme change to different stylesheets?
 function isStartScreenHidden() {
-  if (startScreen.className != 'hidden') { //checks if start screen is hidden
-    startScreen.className = 'hidden'; //if start screen is not hidden, sets to hidden
+  if (startScreen.className != 'hidden') {
+    startScreen.className = 'hidden';
   }
 }
-  // document.querySelector('#title').className = theme+'-title'; //changes title format
-  // congrats.className = theme+'-title'; //changes congrats format
-  // let statsList = document.querySelectorAll('.stats'); //changes stat boxes formatting through setting classname
-  // for (let i = 0; i < statsList.length; i++) {
-    // statsList[i].className = 'stats '+ theme+'-stats';
-  // }
-  // document.querySelector('#misc-img').className = 'misc-img ' +theme+'-img'; //changes bottom left image
-  // let cardList = document.querySelectorAll('.card-back'); //changes card backs
-  // for (let x = 0; x < cardList.length; x++) {
-    // cardList[x].className = 'card-back ' +theme+'-back';
-  // }
-  // for (let i = 0; i < statsText.length; i++) {
-    // statsText[i].classList = 'statsText '+ theme+'-font'; //changes stats fonts
-  // }
-  // document.querySelector('#bg').className = theme+'-bg'; //changes background
-  // if (winScreen.classList.value.includes('hidden')) { //changes win screen styling without changing hidden status
-    // winScreen.className = 'you-win ' + theme+'-win hidden';
-  // } else {
-    // winScreen.className = 'you-win ' +theme+'-win';
-  // }
-  // winGif.className = 'win-gif ' + theme+'-gif'
-  // goAgain.className = 'go-again ' + theme+'-again';
-  // clickBelow.className = 'click-below ' + theme+'-font';
-// }
 
 function handleClick(event) {
   if (event.target.className.indexOf('card-back') === -1) {
@@ -276,9 +244,6 @@ function resetCards() {
   }
 }
 
-// This function is called on load, and adds the first item and second item properties of new card objects
-// to the removeItemsArray that is looped through when cards are matched. This removes the
-// single item class and displays merged cards
 function addToRemoveItemsArray() {
   for (let i = 0; i < allCards.length; i++) {
     removeItemsArray.push(allCards[i].firstItem, allCards[i].secondItem);
