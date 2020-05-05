@@ -10,7 +10,7 @@ var attempts = 0;
 var gamesPlayed = 0;
 var hiddenCards = null;
 var storeHiddenIndex = [];
-var storeHiddenClasses  = [];
+var storeHiddenClasses = [];
 var theme;
 var removeItemsArray = [];
 
@@ -37,6 +37,10 @@ var smallThomasButton = document.getElementById('toThomas');
 var startScreen = document.querySelector('.start-screen');
 var winGif = document.getElementById('win-gif');
 var playAgain = document.querySelector('.play-again-container');
+var spongebobStyle = document.getElementById('spongebob-style');
+var dinoStyle = document.getElementById('dino-style');
+var thomasStyle = document.getElementById('thomas-style');
+var pokemonStyle = document.getElementById('pokemon-style');
 
 const card1 = {
   firstItem: 'backpack',
@@ -106,29 +110,10 @@ spongebobButton.addEventListener('click', spongebobTheme);
 thomasButton.addEventListener('click', thomasTheme);
 dinoButton.addEventListener('click', dinoTheme);
 pokemonButton.addEventListener('click', pokemonTheme);
-smallDinoButton.addEventListener('click', smallDinoTheme);
-smallSpongebobButton.addEventListener('click', smallSpongebobTheme);
-smallThomasButton.addEventListener('click', smallThomasTheme);
-smallPokemonButton.addEventListener('click', smallPokemonTheme);
-
-//these are here to facilitate switching themes in the middle of the game
-//...when it's added
-function smallPokemonTheme() {
-  pokemonTheme();
-  matches = 0;
-}
-function smallSpongebobTheme() {
-  spongebobTheme();
-  matches = 0;
-}
-function smallThomasTheme() {
-  thomasTheme();
-  matches = 0;
-}
-function smallDinoTheme() {
-  dinoTheme();
-  matches = 0;
-}
+smallDinoButton.addEventListener('click', dinoTheme);
+smallSpongebobButton.addEventListener('click', spongebobTheme);
+smallThomasButton.addEventListener('click', thomasTheme);
+smallPokemonButton.addEventListener('click', pokemonTheme);
 
 function clearHidden() {
   for (let i = 0; i < 18; i++) {
@@ -153,52 +138,65 @@ function resetGamePokemon() {
   pokemonTheme();
 }
 
-function spongebobTheme() {
-  theme = 'spongebob';
-  changeTheme(theme);
-}
-function thomasTheme() {
-  theme = 'thomas';
-  changeTheme(theme);
-}
 function dinoTheme() {
-  theme = 'dino';
-  changeTheme(theme);
+  isStartScreenHidden();
+  spongebobStyle.disabled = true;
+  dinoStyle.disabled = false;
+  thomasStyle.disabled = true;
+  pokemonStyle.disabled = true;
 }
 function pokemonTheme() {
-  theme = 'pokemon';
-  changeTheme(theme);
+  isStartScreenHidden();
+  spongebobStyle.disabled = true;
+  dinoStyle.disabled = true;
+  thomasStyle.disabled = true;
+  pokemonStyle.disabled = false;
+}
+function spongebobTheme() {
+  isStartScreenHidden();
+  spongebobStyle.disabled = false;
+  dinoStyle.disabled = true;
+  thomasStyle.disabled = true;
+  pokemonStyle.disabled = true;
+}
+function thomasTheme() {
+  isStartScreenHidden();
+  spongebobStyle.disabled = true;
+  dinoStyle.disabled = true;
+  thomasStyle.disabled = false;
+  pokemonStyle.disabled = true;
 }
 
 //change theme change to different stylesheets?
-function changeTheme(theme) {
+function isStartScreenHidden() {
   if (startScreen.className != 'hidden') { //checks if start screen is hidden
     startScreen.className = 'hidden'; //if start screen is not hidden, sets to hidden
   }
-  document.querySelector('#title').className = theme+'-title'; //changes title format
-  congrats.className = theme+'-title'; //changes congrats format
-  let statsList = document.querySelectorAll('.stats'); //changes stat boxes formatting through setting classname
-  for (let i = 0; i < statsList.length; i++) {
-    statsList[i].className = 'stats '+ theme+'-stats';
-  }
-  document.querySelector('#misc-img').className = 'misc-img ' +theme+'-img'; //changes bottom left image
-  let cardList = document.querySelectorAll('.card-back'); //changes card backs
-  for (let x = 0; x < cardList.length; x++) {
-    cardList[x].className = 'card-back ' +theme+'-back';
-  }
-  for (let i = 0; i < statsText.length; i++) {
-    statsText[i].classList = 'statsText '+ theme+'-font'; //changes stats fonts
-  }
-  document.querySelector('#bg').className = theme+'-bg'; //changes background
-  if (winScreen.classList.value.includes('hidden')) { //changes win screen styling without changing hidden status
-    winScreen.className = 'you-win ' + theme+'-win hidden';
-  } else {
-    winScreen.className = 'you-win ' +theme+'-win';
-  }
-  winGif.className = 'win-gif ' + theme+'-gif'
-  goAgain.className = 'go-again ' + theme+'-again';
-  clickBelow.className = 'click-below ' + theme+'-font';
 }
+// document.querySelector('#title').className = theme+'-title'; //changes title format
+// congrats.className = theme+'-title'; //changes congrats format
+// let statsList = document.querySelectorAll('.stats'); //changes stat boxes formatting through setting classname
+// for (let i = 0; i < statsList.length; i++) {
+// statsList[i].className = 'stats '+ theme+'-stats';
+// }
+// document.querySelector('#misc-img').className = 'misc-img ' +theme+'-img'; //changes bottom left image
+// let cardList = document.querySelectorAll('.card-back'); //changes card backs
+// for (let x = 0; x < cardList.length; x++) {
+// cardList[x].className = 'card-back ' +theme+'-back';
+// }
+// for (let i = 0; i < statsText.length; i++) {
+// statsText[i].classList = 'statsText '+ theme+'-font'; //changes stats fonts
+// }
+// document.querySelector('#bg').className = theme+'-bg'; //changes background
+// if (winScreen.classList.value.includes('hidden')) { //changes win screen styling without changing hidden status
+// winScreen.className = 'you-win ' + theme+'-win hidden';
+// } else {
+// winScreen.className = 'you-win ' +theme+'-win';
+// }
+// winGif.className = 'win-gif ' + theme+'-gif'
+// goAgain.className = 'go-again ' + theme+'-again';
+// clickBelow.className = 'click-below ' + theme+'-font';
+// }
 
 function handleClick(event) {
   if (event.target.className.indexOf('card-back') === -1) {
@@ -214,7 +212,7 @@ function handleClick(event) {
     secondCardMergedItems = secondCardClicked.previousElementSibling.classList[1];
     if (firstCardMergedItems === secondCardMergedItems) {
       storeHiddenClasses.push(firstCardMergedItems);
-      setTimeout(function() {
+      setTimeout(function () {
         for (let i = 0; i < removeItemsArray.length; i++) { //this loops through the removeItemsArray to remove first/secondItem properties from classlist
           firstCardClicked.previousElementSibling.classList.remove(removeItemsArray[i]);
           secondCardClicked.previousElementSibling.classList.remove(removeItemsArray[i]);
@@ -226,7 +224,7 @@ function handleClick(event) {
         attempts++;
         displayStats();
         if (matches === maxMatches) {
-          setTimeout(function() {
+          setTimeout(function () {
             youWin.classList.remove('hidden');
             winGif.classList.remove('hidden');
           }, 2000);
@@ -322,7 +320,7 @@ function createCards() {
     gameCards.appendChild(newCard);
   }
   console.log(gameCards.children);
-  for (let i = 0; i < 18; i ++) {
+  for (let i = 0; i < 18; i++) {
     finalShuffleArray.push(gameCards.children[i]);
   }
   while (gameCards.lastElementChild) {
