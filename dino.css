@@ -27,14 +27,13 @@
 }
 
 .stats {
-  font-family: lumberjackregular;
-  text-transform: uppercase;
   background-color: rgba(19, 130, 32, 0.6);
   box-shadow: 0.2vw 0.2vw 0.2vw black;
 }
 
 .font {
   font-family: lumberjackregular;
+  text-transform: uppercase;
   font-size: 2.3vw;
   color: rgb(183, 168, 59);
   text-shadow: .1vw .1vw .05vw black;
