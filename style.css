@@ -57,18 +57,30 @@
 .dino {
   background-image: url('assets/images/dino-back.png');
   background-color: rgba(19, 130, 32, .9);
+  height: 2vw;
+  width: 2vw;
+  background-size: contain;
 }
 .pokemon {
   background-image: url('assets/images/pokeball.png');
   background-color: none;
+  height: 2vw;
+  width: 2vw;
+  background-size: contain;
 }
 .spongebob {
   background-image: url('assets/images/spongebob-squareface.jpg');
   background-color: rgb(255, 215, 52);
+  height: 2vw;
+  width: 2vw;
+  background-size: contain;
 }
 .thomas {
   background-image: url('assets/images/thomas.png');
   background-color: rgba(129, 194, 250, 0.9);
+  height: 2vw;
+  width: 2vw;
+  background-size: contain;
 }
 
 .goAgain {
@@ -90,6 +102,7 @@
   border: none;
   border-radius: .5rem;
   margin-top: 1rem;
+  background-size: contain;
 }
 
 .toTheme {
@@ -165,10 +178,10 @@
 .theme-changer {
   position: fixed;
   z-index: 1;
-  height: 35px;
-  width: 135px;
+  height: 2vw;
+  width: 100%;
   top: 0;
-  left: 25px;
+  left: 1vw;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
