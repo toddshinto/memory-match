@@ -56,31 +56,35 @@
 }
 .dino {
   background-image: url('assets/images/dino-back.png');
-  background-color: rgba(19, 130, 32, 0);
+  background-color: rgba(19, 130, 32, .5);
   height: 2vw;
   width: 2vw;
   background-size: contain;
+  background-repeat: no-repeat;
 }
 .pokemon {
   background-image: url('assets/images/pokeball.png');
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(255, 255, 255, .5);
   height: 2vw;
   width: 2vw;
   background-size: contain;
+  background-repeat: no-repeat;
 }
 .spongebob {
   background-image: url('assets/images/spongebob-squareface.jpg');
-  background-color: rgba(255, 215, 52, 0);
+  background-color: rgba(255, 215, 52, .5);
   height: 2vw;
   width: 2vw;
   background-size: contain;
+  background-repeat: no-repeat;
 }
 .thomas {
   background-image: url('assets/images/thomas.png');
-  background-color: rgba(129, 194, 250, 0);
+  background-color: rgba(129, 194, 250, .5);
   height: 2vw;
   width: 2vw;
   background-size: contain;
+  background-repeat: no-repeat;
 }
 .instructions, .instructions-container {
   font-family: pwchalkmedium;
