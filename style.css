@@ -638,6 +638,24 @@ div .trunks {
     height: 12vh;
     width: 12vh;
   }
+  .theme-selector {
+    height: 17vh;
+    width: 17vh;
+  }
+  .example {
+    width: 12vh;
+    height: 12vh;
+  }
+  .theme-changer {
+    height: 2vh;
+  }
+  .theme-changer > .dino, .theme-changer > .spongebob, .theme-changer > .thomas, .theme-changer > .pokemon {
+    height: 3vh;
+    width: 3vh;
+  }
+  .font {
+    font-size: 4vh;
+  }
 }
 
 .hidden {
