@@ -87,6 +87,51 @@ const card9 = {
   secondItem: 'socks',
   mergedItems: 'shoes_socks'
 };
+// const card10 = {
+//   firstItem: 'car',
+//   secondItem: 'street',
+//   mergedItems: 'car_street'
+// };
+const card11 = {
+  firstItem: 'hair',
+  secondItem: 'brush',
+  mergedItems: 'hair_brush'
+};
+const card12 = {
+  firstItem: 'hotdog',
+  secondItem: 'bun',
+  mergedItems: 'hotdog_bun'
+};
+const card13 = {
+  firstItem: 'keyboard',
+  secondItem: 'mouse',
+  mergedItems: 'keyboard_mouse'
+};
+// const card14 = {
+//   firstItem: 'lake',
+//   secondItem: 'boat',
+//   mergedItems: 'lake_boat'
+// };
+const card15 = {
+  firstItem: 'pool',
+  secondItem: 'trunks',
+  mergedItems: 'pool_trunks'
+};
+const card16 = {
+  firstItem: 'soap',
+  secondItem: 'hands',
+  mergedItems: 'soap_hands'
+};
+const card17 = {
+  firstItem: 'trash',
+  secondItem: 'trashcan',
+  mergedItems: 'trash_trashcan'
+};
+const card18 = {
+  firstItem: 'toothbrush',
+  secondItem: 'toothpaste',
+  mergedItems: 'toothpaste_toothbrush'
+};
 var allCards = [
   card1,
   card2,
@@ -96,7 +141,16 @@ var allCards = [
   card6,
   card7,
   card8,
-  card9
+  card9,
+  // card10,
+  card11,
+  card12,
+  card13,
+  // card14,
+  card15,
+  card16,
+  card17,
+  card18
 ];
 
 createCards();

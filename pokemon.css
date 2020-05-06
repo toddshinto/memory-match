@@ -14,16 +14,6 @@
   0.01vw 0.02vw 0.4vw rgb(41, 82, 157)
 }
 
-.goAgain {
-  font-family: pokemon_solidnormal;
-  color: rgb(255, 196, 48);
-  text-shadow: -4px 0 rgb(41, 82, 156), 0 4px rgb(41, 82, 156), 4px 0 rgb(41, 82, 156), 0 -4px rgb(41, 82, 156);
-  width: 100%;
-  text-align: left;
-  font-size: 4rem;
-  min-height: 0;
-}
-
 .img {
   background-image: url('assets/images/pikachu.png');
 }

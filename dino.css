@@ -11,16 +11,6 @@
   text-shadow: .2vw .2vw .1vw black;
 }
 
-.goAgain {
-  font-family: lumberjackregular;
-  color: rgb(207, 43, 50);
-  text-shadow: .1vw .1vw .05vw rgb(237, 63, 53);
-  width: 100%;
-  text-align: left;
-  font-size: 3rem;
-  min-height: 0;
-}
-
 .img {
   background-image: url('assets/images/dino.png');
   background-position: center;

@@ -470,6 +470,114 @@ div .pencil {
   background-image: url('assets/images/pencil.png')
 }
 
+div .boat {
+  background-image: url('assets/images/boat.png')
+}
+
+div .brush {
+  background-image: url('assets/images/brush.png')
+}
+
+div .bun {
+  background-image: url('assets/images/bun.png')
+}
+
+div .car {
+  background-image: url('assets/images/car.png');
+}
+
+div .hair {
+  background-image: url('assets/images/hair.png')
+}
+
+div .hands {
+  background-image: url('assets/images/hands.png')
+}
+
+div .hotdog {
+  background-image: url('assets/images/hotdog.png')
+}
+
+div .keyboard {
+  background-image: url('assets/images/keyboard.png')
+}
+
+div .lake {
+  background-image: url('assets/images/lake.png')
+}
+
+div .mouse {
+  background-image: url('assets/images/mouse.png')
+}
+
+div .pool {
+  background-image: url('assets/images/pool.png')
+}
+
+div .soap {
+  background-image: url('assets/images/soap.png')
+}
+
+div .street {
+  background-image: url('assets/images/street.png')
+}
+
+div .toothbrush {
+  background-image: url('assets/images/toothbrush.png')
+}
+
+div .toothpaste {
+  background-image: url('assets/images/toothpaste.png')
+}
+
+div .trash {
+  background-image: url('assets/images/trash.png')
+}
+
+div .trashcan {
+  background-image: url('assets/images/trashcan.png');
+}
+
+div .trunks {
+  background-image: url('assets/images/trunks.png')
+}
+
+.trash_trashcan {
+  background-image: url('assets/images/trash_trashcan.png');
+}
+
+.toothpaste_toothbrush {
+  background-image: url('assets/images/toothpaste_toothbrush.png')
+}
+
+.soap_hands {
+  background-image: url('assets/images/soap_hands.png')
+}
+
+.pool_trunks {
+  background-image: url('assets/images/pool_trunks.png')
+}
+
+.lake_boat {
+  background-image: url('assets/images/lake_boat.png')
+}
+
+.keyboard_mouse {
+  background-image: url('assets/images/keyboard_mouse.png')
+}
+
+.hotdog_bun {
+  background-image: url('assets/images/hotdog_bun.png')
+}
+
+.hair_brush {
+  background-image: url('assets/images/hair_brush.png')
+}
+
+.car_street {
+  background-image: url('assets/images/car_street.png')
+}
+
 .backpack_books {
   background-image: url('assets/images/backpack_books.png');
 }
@@ -508,6 +616,28 @@ div .pencil {
 
 .baseball {
   background-image: url('assets/images/baseball.png');
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .row-2 {
+    flex-direction: column;
+  }
+  .row-2 > aside {
+    flex-direction: row;
+    width: 100%;
+  }
+  .stats {
+    width: 100%;
+    height: 100%;
+  }
+  .col-10 {
+    width: 100%;
+    margin-top: 5%;
+  }
+  .card {
+    height: 12vh;
+    width: 12vh;
+  }
 }
 
 .hidden {
