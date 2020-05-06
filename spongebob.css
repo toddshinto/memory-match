@@ -28,10 +28,10 @@
   text-shadow: 0.1vw 0.1vw 0.1vw #000
 }
 
-/* .card-back {
+.card-back {
   background-image: url('assets/images/spongebob-squareface.jpg');
   background-size: cover;
-} */
+}
 
 .gif {
   background-image: url('assets/images/spongebob-rainbow.gif');
