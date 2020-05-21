@@ -221,36 +221,11 @@ function thomasTheme() {
   pokemonStyle.disabled = true;
 }
 
-//change theme change to different stylesheets?
 function isStartScreenHidden() {
   if (startScreen.className != 'hidden') { //checks if start screen is hidden
     startScreen.className = 'hidden'; //if start screen is not hidden, sets to hidden
   }
 }
-// document.querySelector('#title').className = theme+'-title'; //changes title format
-// congrats.className = theme+'-title'; //changes congrats format
-// let statsList = document.querySelectorAll('.stats'); //changes stat boxes formatting through setting classname
-// for (let i = 0; i < statsList.length; i++) {
-// statsList[i].className = 'stats '+ theme+'-stats';
-// }
-// document.querySelector('#misc-img').className = 'misc-img ' +theme+'-img'; //changes bottom left image
-// let cardList = document.querySelectorAll('.card-back'); //changes card backs
-// for (let x = 0; x < cardList.length; x++) {
-// cardList[x].className = 'card-back ' +theme+'-back';
-// }
-// for (let i = 0; i < statsText.length; i++) {
-// statsText[i].classList = 'statsText '+ theme+'-font'; //changes stats fonts
-// }
-// document.querySelector('#bg').className = theme+'-bg'; //changes background
-// if (winScreen.classList.value.includes('hidden')) { //changes win screen styling without changing hidden status
-// winScreen.className = 'you-win ' + theme+'-win hidden';
-// } else {
-// winScreen.className = 'you-win ' +theme+'-win';
-// }
-// winGif.className = 'win-gif ' + theme+'-gif'
-// goAgain.className = 'go-again ' + theme+'-again';
-// clickBelow.className = 'click-below ' + theme+'-font';
-// }
 
 function handleClick(event) {
   if (event.target.className.indexOf('card-back') === -1) {
@@ -306,7 +281,6 @@ function handleClick(event) {
 function displayStats() {
   document.getElementById('games').textContent = gamesPlayed;
   document.getElementById('attempts').textContent = attempts;
-  /*document.getElementById('accuracy').textContent = calculateAccuracy(attempts, matches);*/
 }
 
 function resetGame() {
