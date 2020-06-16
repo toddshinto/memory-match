@@ -2,45 +2,36 @@ var firstCardClicked;
 var secondCardClicked;
 var firstCardMergedItems;
 var secondCardMergedItems;
-var firstCardClasses;
-var secondCardClasses;
 var maxMatches = 9;
 var matches = 0;
 var attempts = 0;
 var gamesPlayed = 0;
 var hiddenCards = null;
-var storeHiddenIndex = [];
 var storeHiddenClasses = [];
-var theme;
 var removeItemsArray = [];
 
-var gameCards = document.getElementById('gameCards');
-var clickBelow = document.querySelector('.click-below');
-var goAgain = document.querySelector('.go-again');
-var statsText = document.querySelectorAll('.statsText');
-var container = document.getElementById('container');
-var congrats = document.getElementById('congrats');
-var winScreen = document.getElementById('win-screen');
-var pokemonAgain = document.getElementById('pokemon-again');
-var spongeAgain = document.getElementById('sponge-again');
-var dinoAgain = document.getElementById('dino-again');
-var thomasAgain = document.getElementById('thomas-again');
-var youWin = document.querySelector('.you-win');
-var pokemonButton = document.getElementById('pokemon');
-var spongebobButton = document.getElementById('spongebob');
-var thomasButton = document.getElementById('thomas');
-var dinoButton = document.getElementById('dino');
-var smallPokemonButton = document.getElementById('toPokemon');
-var smallSpongebobButton = document.getElementById('toSpongebob');
-var smallDinoButton = document.getElementById('toDino');
-var smallThomasButton = document.getElementById('toThomas');
-var startScreen = document.querySelector('.start-screen');
-var winGif = document.getElementById('win-gif');
-var playAgain = document.querySelector('.play-again-container');
-var spongebobStyle = document.getElementById('spongebob-style');
-var dinoStyle = document.getElementById('dino-style');
-var thomasStyle = document.getElementById('thomas-style');
-var pokemonStyle = document.getElementById('pokemon-style');
+const gameCards = document.getElementById('gameCards');
+const container = document.getElementById('container');
+const pokemonAgain = document.getElementById('pokemon-again');
+const spongeAgain = document.getElementById('sponge-again');
+const dinoAgain = document.getElementById('dino-again');
+const thomasAgain = document.getElementById('thomas-again');
+const youWin = document.querySelector('.you-win');
+const pokemonButton = document.getElementById('pokemon');
+const spongebobButton = document.getElementById('spongebob');
+const thomasButton = document.getElementById('thomas');
+const dinoButton = document.getElementById('dino');
+const smallPokemonButton = document.getElementById('toPokemon');
+const smallSpongebobButton = document.getElementById('toSpongebob');
+const smallDinoButton = document.getElementById('toDino');
+const smallThomasButton = document.getElementById('toThomas');
+const startScreen = document.querySelector('.start-screen');
+const winGif = document.getElementById('win-gif');
+const playAgain = document.querySelector('.play-again-container');
+const spongebobStyle = document.getElementById('spongebob-style');
+const dinoStyle = document.getElementById('dino-style');
+const thomasStyle = document.getElementById('thomas-style');
+const pokemonStyle = document.getElementById('pokemon-style');
 
 const card1 = {
   firstItem: 'backpack',
@@ -132,7 +123,7 @@ const card18 = {
   secondItem: 'toothpaste',
   mergedItems: 'toothpaste_toothbrush'
 };
-var allCards = [
+const allCards = [
   card1,
   card2,
   card3,
