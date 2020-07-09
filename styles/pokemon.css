@@ -1,12 +1,12 @@
 /* Pokemon theme */
 
 .bg {
-  background: url('assets/images/pokemon-background.png');
+  background: url('../assets/images/pokemon-background.png');
 }
 
 .title {
   font-family: pokemon_solidnormal;
-  font-size: 4vw;
+  font-size: 2vw;
   color: rgb(255, 196, 48);
   text-shadow:
   -0.2vw 0.1vw rgb(41, 82, 157),
@@ -15,7 +15,7 @@
 }
 
 .img {
-  background-image: url('assets/images/pikachu.png');
+  background-image: url('../assets/images/pikachu.png');
 }
 
 .stats {
@@ -33,11 +33,11 @@
 }
 
 .card-back {
-  background-image: url('assets/images/pokeball.png');
+  background-image: url('../assets/images/pokeball.png');
   background-size: 60%;
   background-color: rgba(255, 255, 255, 1);
 }
 
 .gif {
-  background-image: url('assets/images/squirtle-strut.gif');
+  background-image: url('../assets/images/squirtle-strut.gif');
 }

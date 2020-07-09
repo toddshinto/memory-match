@@ -170,6 +170,7 @@
 .bg {
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center bottom;
 }
 .show {
   opacity: 1;
@@ -256,7 +257,7 @@ body {
 }
 
 .container {
-  width: 100%;
+  width: 80%;
   margin: auto;
   height: 100%;
 }
@@ -323,9 +324,10 @@ body {
 }
 
 .card {
-  height: 12vw;
-  width: 12vw;
+  height: auto;
+  width: 16%;
   position: relative;
+  margin-bottom: 5px;
 }
 
 .card:hover {
