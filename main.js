@@ -247,12 +247,12 @@ function handleClick(event) {
           setTimeout(function () {
             youWin.classList.remove('hidden');
             winGif.classList.remove('hidden');
+            setTimeout(function () {
+              playAgain.classList.remove('hidden');
+            }, 3000);
           }, 2000);
           container.classList.add('hiddenFade');
           clearHidden();
-          setTimeout(function () {
-            playAgain.classList.remove('hidden');
-          }, 5000);
         }
       }, 1000);
     } else {
