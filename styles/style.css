@@ -658,6 +658,9 @@ div .trunks {
   .font {
     font-size: 4vh;
   }
+  .container {
+    width: 100%;
+  }
 }
 
 .hidden {
