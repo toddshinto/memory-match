@@ -1,7 +1,7 @@
 /* Thomas Theme */
 
 .bg {
-  background: url('assets/images/hills.jpg');
+  background: url('../assets/images/hills.jpg');
 }
 
 .title {
@@ -12,7 +12,7 @@
 }
 
 .img {
-  background-image: url('assets/images/thomas.png');
+  background-image: url('../assets/images/thomas.png');
   background-position: center;
 }
 
@@ -28,12 +28,12 @@
 }
 
 .card-back {
-  background-image: url('assets/images/thomas-back.png');
+  background-image: url('../assets/images/thomas-back.png');
   background-size: contain;
   background-position: center;
   background-color:rgb(11, 116, 181);
 }
 
 .gif {
-  background-image: url('assets/images/thomas-choo-choo.gif');
+  background-image: url('../assets/images/thomas-choo-choo.gif');
 }

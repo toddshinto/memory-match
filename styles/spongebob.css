@@ -1,7 +1,7 @@
 /* Spongebob theme */
 
 .bg {
-  background-image: url('assets/images/spongebob-background.jpg');
+  background-image: url('../assets/images/spongebob-background.jpg');
 }
 
 .title {
@@ -12,7 +12,7 @@
 }
 
 .img {
-  background-image: url('assets/images/spongebob-and-patrick.png');
+  background-image: url('../assets/images/spongebob-and-patrick.png');
 }
 
 .stats {
@@ -29,10 +29,10 @@
 }
 
 .card-back {
-  background-image: url('assets/images/spongebob-squareface.jpg');
+  background-image: url('../assets/images/spongebob-squareface.jpg');
   background-size: cover;
 }
 
 .gif {
-  background-image: url('assets/images/spongebob-rainbow.gif');
+  background-image: url('../assets/images/spongebob-rainbow.gif');
 }

@@ -1,7 +1,7 @@
 /* Dinosaur Theme */
 
 .bg {
-  background-image: url('assets/images/dino-background.jpg');
+  background-image: url('../assets/images/dino-background.jpg');
 }
 
 .title {
@@ -12,7 +12,7 @@
 }
 
 .img {
-  background-image: url('assets/images/dino.png');
+  background-image: url('../assets/images/dino.png');
   background-position: center;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .card-back {
-  background-image: url('assets/images/dino-back.png');
+  background-image: url('../assets/images/dino-back.png');
   background-size: contain;
   background-position: center;
   background-color:#639A67;
@@ -38,5 +38,5 @@
 }
 
 .gif {
-  background-image: url('assets/images/rex-dance.gif');
+  background-image: url('../assets/images/rex-dance.gif');
 }

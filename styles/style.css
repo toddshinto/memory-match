@@ -1,61 +1,61 @@
 @font-face {
   font-family: 'spongeboy_me_bobregular';
-  src: url('fonts/spongeboy_me_bob-webfont.woff2') format('woff2'),
-        url('fonts/spongeboy_me_bob-webfont.woff') format('woff');
+  src: url('../fonts/spongeboy_me_bob-webfont.woff2') format('woff2'),
+        url('../fonts/spongeboy_me_bob-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'flange_bqbold';
-  src: url('fonts/flange_bq_bold.woff2') format('woff2'),
-        url('fonts/flange_bq_bold.woff') format('woff');
+  src: url('../fonts/flange_bq_bold.woff2') format('woff2'),
+        url('../fonts/flange_bq_bold.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
     font-family: 'prehistoric_cavemanregular';
-    src: url('fonts/prehistoriccaveman-prj7.woff2') format('woff2'),
-         url('fonts/prehistoriccaveman-prj7.woff') format('woff');
+    src: url('../fonts/prehistoriccaveman-prj7.woff2') format('woff2'),
+         url('../fonts/prehistoriccaveman-prj7.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'pwchalkmedium';
-    src: url('fonts/pwchalk.woff2') format('woff2'),
-         url('fonts/pwchalk.woff') format('woff');
+    src: url('../fonts/pwchalk.woff2') format('woff2'),
+         url('../fonts/pwchalk.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'pokemon_hollownormal';
-    src: url('fonts/pokemon_hollow.woff2') format('woff2'),
-         url('fonts/pokemon_hollow.woff') format('woff');
+    src: url('../fonts/pokemon_hollow.woff2') format('woff2'),
+         url('../fonts/pokemon_hollow.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'pokemon_solidnormal';
-    src: url('fonts/pokemon_solid.woff2') format('woff2'),
-         url('fonts/pokemon_solid.woff') format('woff');
+    src: url('../fonts/pokemon_solid.woff2') format('woff2'),
+         url('../fonts/pokemon_solid.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'cavemanregular';
-    src: url('fonts/caveman_-webfont.woff2') format('woff2'),
-         url('fonts/caveman_-webfont.woff') format('woff');
+    src: url('../fonts/caveman_-webfont.woff2') format('woff2'),
+         url('../fonts/caveman_-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'lumberjackregular';
-    src: url('fonts/lumberjackregular-d28x-webfont.woff2') format('woff2'),
-         url('fonts/lumberjackregular-d28x-webfont.woff') format('woff');
+    src: url('../fonts/lumberjackregular-d28x-webfont.woff2') format('woff2'),
+         url('../fonts/lumberjackregular-d28x-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 .dino {
-  background-image: url('assets/images/dino-back.png');
+  background-image: url('../assets/images/dino-back.png');
   background-color: rgba(19, 130, 32, .5);
   height: 2vw;
   width: 2vw;
@@ -63,7 +63,7 @@
   background-repeat: no-repeat;
 }
 .pokemon {
-  background-image: url('assets/images/pokeball.png');
+  background-image: url('../assets/images/pokeball.png');
   background-color: rgba(255, 255, 255, .5);
   height: 2vw;
   width: 2vw;
@@ -71,7 +71,7 @@
   background-repeat: no-repeat;
 }
 .spongebob {
-  background-image: url('assets/images/spongebob-squareface.jpg');
+  background-image: url('../assets/images/spongebob-squareface.jpg');
   background-color: rgba(255, 215, 52, .5);
   height: 2vw;
   width: 2vw;
@@ -79,7 +79,7 @@
   background-repeat: no-repeat;
 }
 .thomas {
-  background-image: url('assets/images/thomas.png');
+  background-image: url('../assets/images/thomas.png');
   background-color: rgba(129, 194, 250, .5);
   height: 2vw;
   width: 2vw;
@@ -237,7 +237,7 @@
   position: fixed;
   height: 100%;
   width: 100%;
-  background-image: url('assets/images/chalkboard.jpg');
+  background-image: url('../assets/images/chalkboard.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-color: black;
@@ -403,219 +403,219 @@ h1 {
 }
 
 div .backpack {
-  background-image: url('assets/images/backpack.png');
+  background-image: url('../assets/images/backpack.png');
 }
 
 div .books {
-  background-image: url('assets/images/books.png');
+  background-image: url('../assets/images/books.png');
 }
 
 div .bat {
-  background-image: url('assets/images/bat.png');
+  background-image: url('../assets/images/bat.png');
 }
 
 div .burger {
-  background-image: url('assets/images/burger.png');
+  background-image: url('../assets/images/burger.png');
 }
 
 div .glasses {
-  background-image: url('assets/images/glasses.png');
+  background-image: url('../assets/images/glasses.png');
 }
 
 div .eyes {
-  background-image: url('assets/images/eyes.png');
+  background-image: url('../assets/images/eyes.png');
 }
 
 div .fries {
-  background-image: url('assets/images/fries.png');
+  background-image: url('../assets/images/fries.png');
 }
 
 div .cup {
-  background-image: url('assets/images/cup.png');
+  background-image: url('../assets/images/cup.png');
 }
 
 div .milk {
-  background-image: url('assets/images/milk.png');
+  background-image: url('../assets/images/milk.png');
 }
 
 div .pants {
-  background-image: url('assets/images/pants.png');
+  background-image: url('../assets/images/pants.png');
 }
 
 div .shirt {
-  background-image: url('assets/images/shirt.png');
+  background-image: url('../assets/images/shirt.png');
 }
 
 div .shoes {
-  background-image: url('assets/images/shoes.png');
+  background-image: url('../assets/images/shoes.png');
 }
 
 div .socks {
-  background-image: url('assets/images/socks.png');
+  background-image: url('../assets/images/socks.png');
 }
 
 div .tv {
-  background-image: url('assets/images/tv.png');
+  background-image: url('../assets/images/tv.png');
 }
 
 div .remote {
-  background-image: url('assets/images/remote.png');
+  background-image: url('../assets/images/remote.png');
 }
 
 div .paper {
-  background-image: url('assets/images/paper.png')
+  background-image: url('../assets/images/paper.png')
 }
 
 div .pencil {
-  background-image: url('assets/images/pencil.png')
+  background-image: url('../assets/images/pencil.png')
 }
 
 div .boat {
-  background-image: url('assets/images/boat.png')
+  background-image: url('../assets/images/boat.png')
 }
 
 div .brush {
-  background-image: url('assets/images/brush.png')
+  background-image: url('../assets/images/brush.png')
 }
 
 div .bun {
-  background-image: url('assets/images/bun.png')
+  background-image: url('../assets/images/bun.png')
 }
 
 div .car {
-  background-image: url('assets/images/car.png');
+  background-image: url('../assets/images/car.png');
 }
 
 div .hair {
-  background-image: url('assets/images/hair.png')
+  background-image: url('../assets/images/hair.png')
 }
 
 div .hands {
-  background-image: url('assets/images/hands.png')
+  background-image: url('../assets/images/hands.png')
 }
 
 div .hotdog {
-  background-image: url('assets/images/hotdog.png')
+  background-image: url('../assets/images/hotdog.png')
 }
 
 div .keyboard {
-  background-image: url('assets/images/keyboard.png')
+  background-image: url('../assets/images/keyboard.png')
 }
 
 div .lake {
-  background-image: url('assets/images/lake.png')
+  background-image: url('../assets/images/lake.png')
 }
 
 div .mouse {
-  background-image: url('assets/images/mouse.png')
+  background-image: url('../assets/images/mouse.png')
 }
 
 div .pool {
-  background-image: url('assets/images/pool.png')
+  background-image: url('../assets/images/pool.png')
 }
 
 div .soap {
-  background-image: url('assets/images/soap.png')
+  background-image: url('../assets/images/soap.png')
 }
 
 div .street {
-  background-image: url('assets/images/street.png')
+  background-image: url('../assets/images/street.png')
 }
 
 div .toothbrush {
-  background-image: url('assets/images/toothbrush.png')
+  background-image: url('../assets/images/toothbrush.png')
 }
 
 div .toothpaste {
-  background-image: url('assets/images/toothpaste.png')
+  background-image: url('../assets/images/toothpaste.png')
 }
 
 div .trash {
-  background-image: url('assets/images/trash.png')
+  background-image: url('../assets/images/trash.png')
 }
 
 div .trashcan {
-  background-image: url('assets/images/trashcan.png');
+  background-image: url('../assets/images/trashcan.png');
 }
 
 div .trunks {
-  background-image: url('assets/images/trunks.png')
+  background-image: url('../assets/images/trunks.png')
 }
 
 .trash_trashcan {
-  background-image: url('assets/images/trash_trashcan.png');
+  background-image: url('../assets/images/trash_trashcan.png');
 }
 
 .toothpaste_toothbrush {
-  background-image: url('assets/images/toothpaste_toothbrush.png')
+  background-image: url('../assets/images/toothpaste_toothbrush.png')
 }
 
 .soap_hands {
-  background-image: url('assets/images/soap_hands.png')
+  background-image: url('../assets/images/soap_hands.png')
 }
 
 .pool_trunks {
-  background-image: url('assets/images/pool_trunks.png')
+  background-image: url('../assets/images/pool_trunks.png')
 }
 
 .lake_boat {
-  background-image: url('assets/images/lake_boat.png')
+  background-image: url('../assets/images/lake_boat.png')
 }
 
 .keyboard_mouse {
-  background-image: url('assets/images/keyboard_mouse.png')
+  background-image: url('../assets/images/keyboard_mouse.png')
 }
 
 .hotdog_bun {
-  background-image: url('assets/images/hotdog_bun.png')
+  background-image: url('../assets/images/hotdog_bun.png')
 }
 
 .hair_brush {
-  background-image: url('assets/images/hair_brush.png')
+  background-image: url('../assets/images/hair_brush.png')
 }
 
 .car_street {
-  background-image: url('assets/images/car_street.png')
+  background-image: url('../assets/images/car_street.png')
 }
 
 .backpack_books {
-  background-image: url('assets/images/backpack_books.png');
+  background-image: url('../assets/images/backpack_books.png');
 }
 
 .baseball_bat {
-  background-image: url('assets/images/baseball_bat.png');
+  background-image: url('../assets/images/baseball_bat.png');
 }
 
 .eyes_glasses {
-  background-image: url('assets/images/eyes_glasses.png');
+  background-image: url('../assets/images/eyes_glasses.png');
 }
 
 .burger_fries {
-  background-image: url('assets/images/burger_fries.png');
+  background-image: url('../assets/images/burger_fries.png');
 }
 
 .milk_cup {
-  background-image: url('assets/images/milk_cup.png');
+  background-image: url('../assets/images/milk_cup.png');
 }
 
 .pants_shirt {
-  background-image: url('assets/images/pants_shirt.png');
+  background-image: url('../assets/images/pants_shirt.png');
 }
 
 .shoes_socks {
-  background-image: url('assets/images/shoes_socks.png');
+  background-image: url('../assets/images/shoes_socks.png');
 }
 
 .tv_remote {
-  background-image: url('assets/images/tv_remote.png');
+  background-image: url('../assets/images/tv_remote.png');
 }
 
 .paper_pencil {
-  background-image: url('assets/images/paper_pencil.png');
+  background-image: url('../assets/images/paper_pencil.png');
 }
 
 .baseball {
-  background-image: url('assets/images/baseball.png');
+  background-image: url('../assets/images/baseball.png');
 }
 
 @media (max-aspect-ratio: 1/1) {
