@@ -1,5 +1,5 @@
 # memory-match
-#### A front-end memory match game. Created with original illustrations to facilitate word association learning.
+* A front-end memory match game. Created with original illustrations to facilitate word association learning.
 
 > The game that Todd developed for our clientele (children with disabilities) helped them to learn essential developmental skills in a colorful, user-friendly format.
 
